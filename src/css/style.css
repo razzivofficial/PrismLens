@@ -1,3 +1,191 @@
+
+
+
+/* Slider 1 css by tushar */
+
+
+.slider-body::-webkit-scrollbar {
+  width: 0.5em; /* Set the width of the scrollbar */
+}
+
+.slider-body::-webkit-scrollbar-thumb {
+  background-color: transparent; /* Make the thumb (the draggable part) transparent */
+}
+
+.slider-body {
+  overflow-y: scroll; /* Always show a scrollbar even if it's not needed */
+  overflow-x: hidden; /* Hide the horizontal scrollbar */
+  scrollbar-width: thin; /* For Firefox */
+}
+
+.top{
+  margin:  10px;
+}
+.img-slider {
+      max-width: 100%; /* Set the maximum width of the image to 100% of its container */
+      height: auto; /* Maintain the image's aspect ratio */
+      display: block; /* Remove any extra space below the image */
+      margin: 0 auto; 
+  }
+
+.slide-container{
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 600px;
+  margin: 2px auto;
+}
+
+.slider{
+  display: flex;
+  transition: transform 2s ease-in-out;
+
+}
+
+.slide{
+  min-width: 100%;
+  overflow: hidden;
+}
+
+.arrow {
+  position: absolute;
+  border-radius: 50%;
+  top: 100%;
+  transform: translateY(-50%);
+  font-size: 25px;
+  cursor: pointer;
+  
+  user-select: none;
+}
+
+
+
+.arrow.left {
+  left: 10px;
+}
+
+.arrow.right {
+  right: 10px;
+}
+
+.bottom{
+  margin-top: 2px;
+}
+
+.lower{
+  display: flex;
+  margin-top: 20px;
+  display:flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 50%;
+}
+
+.l1{
+  display: inline;
+  border: 2px solid black;
+  border-radius: 7px;
+  padding: 4px;
+  justify-content: center;
+  background: white;
+  transition: transform 0.5s ease,background 0.5s ease,box-shadow 0.5s ease;
+  animation: fadeIn 4s ease 2s forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+      opacity: 0; /* Start with 0 opacity */
+      transform: translateY(20px); /* Move the container down */
+    }
+    100% {
+      opacity: 1; /* End with full opacity */
+      transform: translateY(0); /* Move the container to its normal position */
+    }
+}
+
+.l1:hover{
+  transform: scale(1.1);
+  box-shadow: 10px 10px 10px black ;
+  background: linear-gradient(rgb(176, 173, 173),white,white,rgb(129, 128, 128));
+}
+.glass-box,
+.l2 {
+  padding: 10px;
+  margin: 0 auto; /* Center the element */
+  max-width: 100%; /* Set maximum width to 100% for responsiveness */
+}
+
+/* Media Query for smaller screens */
+@media only screen and (max-width: 768px) {
+  .glass-box,
+  .l2 {
+      width: 100%; /* Set width to 100% for smaller screens */
+  }
+}
+
+
+.btn{
+  padding: 5px;
+  margin-left: 100px;
+  background: rgb(0, 255, 102);
+  font-size:x-large ;
+  border-radius: 3px;
+  transition: background 0.5s ease;
+  transition: border-radius 0.3s ease;
+}
+
+.btn:hover{
+  cursor: pointer;
+  border-radius: 20px;
+  
+  background: linear-gradient(rgb(14, 95, 14),rgb(0, 255, 102),rgb(0, 255, 102),rgb(14, 95, 14));
+  box-shadow: 3px 3px 5px black;
+  
+}
+
+
+@media only screen and (max-width: 768px) {
+  .slider-body {
+      scrollbar-width: auto; /* Reset scrollbar width for smaller screens */
+  }
+
+  .img-slider {
+      margin: 0; /* Reset margin for smaller screens */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+
+  .slide-container {
+      max-width: 100%; /* Set maximum width to 100% for smaller screens */
+  }
+
+  .btn {
+      margin-left: 0; /* Reset margin for smaller screens */
+  }
+}
+
+
+@media only screen and (max-width: 768px) {
+  .lower {
+      flex-direction: column; /* Change to a column layout for smaller screens */
+      height: auto; /* Reset height for smaller screens */
+  }
+  .l1{
+      display: inline;
+      margin: 8px;
+      width: 70%;
+      justify-content: center;
+      
+  }
+  .btn {
+      margin-left: 0; /* Reset margin for smaller screens */
+      margin-top: 10px; /* Add margin to the top for spacing */
+  }
+}
+/* slider 1 css by tushar end */
+
+
 /* footer section started  */
 
 .footer-widget p {
