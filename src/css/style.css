@@ -1,6 +1,5 @@
 /* Slider 1 css by tushar */
 
-
 .slider-body::-webkit-scrollbar {
   width: 0.5em;
   /* Set the width of the scrollbar */
@@ -25,12 +24,18 @@
 }
 
 .img-slider {
+<<<<<<< HEAD
   max-width: 100%;
   /* Set the maximum width of the image to 100% of its container */
   height: auto;
   /* Maintain the image's aspect ratio */
   display: block;
   /* Remove any extra space below the image */
+=======
+  max-width: 100%; /* Set the maximum width of the image to 100% of its container */
+  height: auto; /* Maintain the image's aspect ratio */
+  display: block; /* Remove any extra space below the image */
+>>>>>>> 58e78d811297323d5480dfde7aaf880ace4bd002
   margin: 0 auto;
 }
 
@@ -45,7 +50,6 @@
 .slider {
   display: flex;
   transition: transform 2s ease-in-out;
-
 }
 
 .slide {
@@ -64,8 +68,6 @@
   user-select: none;
 }
 
-
-
 .arrow.left {
   left: 10px;
 }
@@ -79,7 +81,10 @@
 }
 
 .lower {
+<<<<<<< HEAD
   margin-bottom: 20px;
+=======
+>>>>>>> 58e78d811297323d5480dfde7aaf880ace4bd002
   display: flex;
   margin-top: 20px;
   display: flex;
@@ -101,6 +106,7 @@
 
 @keyframes fadeIn {
   0% {
+<<<<<<< HEAD
     opacity: 0;
     /* Start with 0 opacity */
     transform: translateY(20px);
@@ -112,13 +118,30 @@
     /* End with full opacity */
     transform: translateY(0);
     /* Move the container to its normal position */
+=======
+    opacity: 0; /* Start with 0 opacity */
+    transform: translateY(20px); /* Move the container down */
+  }
+  100% {
+    opacity: 1; /* End with full opacity */
+    transform: translateY(0); /* Move the container to its normal position */
+>>>>>>> 58e78d811297323d5480dfde7aaf880ace4bd002
   }
 }
 
 .l1:hover {
   transform: scale(1.1);
   box-shadow: 10px 10px 10px black;
+<<<<<<< HEAD
   background: linear-gradient(white, white, white, rgb(205, 197, 197));
+=======
+  background: linear-gradient(
+    rgb(176, 173, 173),
+    white,
+    white,
+    rgb(129, 128, 128)
+  );
+>>>>>>> 58e78d811297323d5480dfde7aaf880ace4bd002
 }
 
 .glass-box,
@@ -135,6 +158,7 @@
 
   .glass-box,
   .l2 {
+<<<<<<< HEAD
     width: 100%;
     /* Set width to 100% for smaller screens */
   }
@@ -142,6 +166,13 @@
 
 
 .bttn-1 {
+=======
+    width: 100%; /* Set width to 100% for smaller screens */
+  }
+}
+
+.btn {
+>>>>>>> 58e78d811297323d5480dfde7aaf880ace4bd002
   padding: 5px;
   margin-left: 100px;
   background: rgb(0, 255, 102);
@@ -151,6 +182,7 @@
   transition: border-radius 0.3s ease;
 }
 
+<<<<<<< HEAD
 .bttn-1:hover {
   cursor: pointer;
   border-radius: 20px;
@@ -159,10 +191,24 @@
   box-shadow: 3px 3px 5px black;
 
 }
+=======
+.btn:hover {
+  cursor: pointer;
+  border-radius: 20px;
+>>>>>>> 58e78d811297323d5480dfde7aaf880ace4bd002
 
+  background: linear-gradient(
+    rgb(14, 95, 14),
+    rgb(0, 255, 102),
+    rgb(0, 255, 102),
+    rgb(14, 95, 14)
+  );
+  box-shadow: 3px 3px 5px black;
+}
 
 @media only screen and (max-width: 768px) {
   .slider-body {
+<<<<<<< HEAD
     scrollbar-width: auto;
     /* Reset scrollbar width for smaller screens */
   }
@@ -170,12 +216,20 @@
   .img-slider {
     margin: 0;
     /* Reset margin for smaller screens */
+=======
+    scrollbar-width: auto; /* Reset scrollbar width for smaller screens */
+  }
+
+  .img-slider {
+    margin: 0; /* Reset margin for smaller screens */
+>>>>>>> 58e78d811297323d5480dfde7aaf880ace4bd002
     display: flex;
     justify-content: center;
     align-items: center;
   }
 
   .slide-container {
+<<<<<<< HEAD
     max-width: 100%;
     /* Set maximum width to 100% for smaller screens */
   }
@@ -183,23 +237,36 @@
   .bttn-1 {
     margin-left: 0;
     /* Reset margin for smaller screens */
+=======
+    max-width: 100%; /* Set maximum width to 100% for smaller screens */
+  }
+
+  .btn {
+    margin-left: 0; /* Reset margin for smaller screens */
+>>>>>>> 58e78d811297323d5480dfde7aaf880ace4bd002
   }
 }
 
-
 @media only screen and (max-width: 768px) {
   .lower {
+<<<<<<< HEAD
     flex-direction: column;
     /* Change to a column layout for smaller screens */
     height: auto;
     /* Reset height for smaller screens */
   }
 
+=======
+    flex-direction: column; /* Change to a column layout for smaller screens */
+    height: auto; /* Reset height for smaller screens */
+  }
+>>>>>>> 58e78d811297323d5480dfde7aaf880ace4bd002
   .l1 {
     display: inline;
     margin: 8px;
     width: 70%;
     justify-content: center;
+<<<<<<< HEAD
 
   }
 
@@ -208,6 +275,12 @@
     /* Reset margin for smaller screens */
     margin-top: 10px;
     /* Add margin to the top for spacing */
+=======
+  }
+  .btn {
+    margin-left: 0; /* Reset margin for smaller screens */
+    margin-top: 10px; /* Add margin to the top for spacing */
+>>>>>>> 58e78d811297323d5480dfde7aaf880ace4bd002
   }
 }
 
@@ -254,7 +327,6 @@
 }
 
 /* slider 1 css by tushar end */
-
 
 /* footer section started  */
 
