@@ -1116,8 +1116,8 @@ p {
 
 
 .video-container {
-  max-width: 1024px;
-  margin: 60px auto;
+  max-width: 1200px;
+  margin: 20px auto;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -1125,7 +1125,7 @@ p {
 
 .video-box {
   position: relative;
-  width: calc(33.33% - 20px);
+  width: calc(33.33% - 20px); /* Each box takes 50% of the container width */
   margin: 10px;
   overflow: hidden;
   border-radius: 10px;
@@ -1134,7 +1134,7 @@ p {
 }
 
 .video-box:hover {
-  transform: scale(1.10);
+  transform: scale(1.05);
 }
 
 .video-box iframe {
