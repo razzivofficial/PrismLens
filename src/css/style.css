@@ -1,3 +1,436 @@
+/* ----- navbar started ----- */
+
+/* ----- part first ----- */
+.header{
+  width: 100%;
+  padding: 0px 1px 1px 0px;
+  display: flex;
+  align-items:center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.logo{
+  height: 100px;
+  width:200px;
+}
+.inputtext{
+  height: 50px;
+  width:600px;
+  border-radius: 7px;
+  padding-left: 20px;
+}
+nav{
+  display: flex;
+  align-items:center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 0;
+  font-family: 'Poppins',sans-serif;
+  box-sizing: border-box;
+}
+nav ul li{
+  display: inline-block;
+  list-style: none;
+  margin:10px 10px;
+}
+nav ul li a{
+  margin-top:50px;
+  color: #726161;
+  text-decoration: none !important;
+  font-size:16px;
+  position:relative; 
+}
+nav ul li a::after{
+  content: '';
+  width:0;
+  height: 3px;
+  background: #ba98a3;
+  position: absolute;
+  left:0;
+  bottom: -6px;
+  transition: 0.5s;
+}
+/* button */
+.btnhover{
+  --c: rgb(212, 203, 182);
+  text-decoration-color: var(--c);
+  font-size: 14px;
+  border-radius: 0.2em;
+  width: 4rem;
+  height: 3em;
+  font-weight: bold;
+  font-family: sans-serif;
+  letter-spacing: 0.1em;
+  text-align: center;
+  line-height: 3em;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: 0.5s;
+  margin: 10px;
+  border-radius: 10px;
+  margin-top: 30px;
+}
+
+.btnhover span{
+  position: absolute;
+  width: 25%;
+  height: 100%;
+  background-color: var(--c);
+  transform: translateY(150%);
+  border-radius: 50%;
+  left: calc((var(--n) - 1) * 25%);
+  transition: 0.5s;
+  transition-delay: calc((var(--n) - 1) * 0.1s);
+  z-index: -1;
+}
+
+nav ul li:hover {
+  color: black;
+}
+
+nav ul li:hover span {
+  transform: translateY(0) scale(2);
+}
+
+nav ul li span:nth-child(1) {
+  --n: 1;
+}
+
+nav ul li span:nth-child(2) {
+  --n: 2;
+}
+
+nav ul li span:nth-child(3) {
+  --n: 3;
+}
+
+nav ul li span:nth-child(4) {
+  --n: 4;
+}
+
+/* --- sign in --- */
+.overlaysignin {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 900;
+}
+#signin-popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  border-radius: 10px;
+}
+#signin-form {
+  text-align: center;
+}
+#signin-form label {
+  text-align: left;
+  display: block;
+  margin-bottom: 10px;
+}
+#signin-form input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+  border-radius: 20px;
+}
+
+#signin-form button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+#signin-form button:hover {
+  background-color: #45a049;
+}
+#signin-form p{
+  text-decoration: underline;
+}
+/* --- sign up --- */
+.overlaysignup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 900;
+}
+
+#signup-popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  text-align: center;
+  border-radius: 10px;
+}
+
+#signup-form {
+  text-align: center;
+}
+
+#signup-form label {
+  text-align: left;
+  display: block;
+  margin-bottom: 10px;
+}
+
+#signup-form input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+  border-radius: 20px;
+}
+#signup-form button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+#signup-form button:hover {
+  background-color: #45a049;
+}
+#signup-form p{
+  text-decoration: underline;
+}
+/* ----- part second ----- */
+.leftright{
+  background-color: rgb(254, 247, 247);
+  margin-left: 1px;
+  padding: 0px 0px 0px 0px;
+  display: flex;
+  align-items:center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.left{
+  display: flex;
+  align-items:center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.left ul{
+  padding-left: 15px;
+}
+.left ul li{
+  display: inline-block;
+  list-style: none;
+  margin:8px 5px 1px;
+}
+.left ul li a{
+  color: #726161;
+  text-decoration: none !important;
+  font-size:16px;
+  position:relative; 
+  transition:transform 0.5s;
+}
+.left ul li a::after{
+  content: '';
+  width:0;
+  height: 3px;
+  background: #ba98a3;
+  position: absolute;
+  left:0;
+  bottom: -6px;
+  transition: 0.5s;
+}
+.left ul li a:hover::after{
+  width:100%;
+}
+.rightbtn{
+  display:inline-block;
+  width: fit-content;
+  border:1px solid #b6adb0;
+  padding: 10px 15px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: white;
+  border-color: #fff;
+}
+#firstbtn{
+  color:rgb(243, 240, 240);
+  background-color: #067008;
+}
+#secondbtn{
+  color: rgb(1, 1, 56);
+  background-color: rgb(198, 236, 248);
+}
+#thirdbtn{
+  color: rgb(164, 142, 30);
+  background-color: rgb(1, 1, 56);
+  margin-right: 5px;
+}
+/* ----- third part ----- */
+.glassimage{
+  background-color: rgb(245, 240, 240);
+  margin-left: 1px;
+  padding: 2px 1px 1px 1px;
+  display: flex;
+  align-items:center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+.glassimage ul{
+  padding-left: 15px;
+}
+.photo{
+  margin: 5px;
+  border-radius: 7px;
+  height:160px;
+  width:235px;
+}
+img{
+  width:100%;
+}
+
+/* ----- small screen ----- */
+nav .fas{
+  display: none;
+}
+.sidemenu{
+  display: none;
+}
+@media only screen and (max-width: 1350px){
+  #largescreen{
+      display: none;
+  }
+  .leftright{
+      display: none;
+  }
+  nav .fas{
+      display: block;
+      font-size: 25px;
+      top:500px;
+      margin-right:10px;
+  }
+  .fas.stop{
+      margin-right:50%;
+      padding-left: 50%;
+  }
+  .btn.btn4,.btn.btn5{
+      font-size: 16px;
+      border:1px solid grey;
+      height: 40px;
+      border-radius: 10px;
+      display: inline;
+  }
+  .btn.btn4{
+      margin-left: 10px;
+      display: inline;
+      background-color: #3498db;
+      width: 45%;
+  }
+  .btn.btn5{
+      margin-left: 5px;
+      display: inline;
+      background-color: rgb(34, 34, 248); 
+      width: 45%;
+  }
+  nav ul{
+      background-color: rgb(252, 249, 249);
+      position: fixed;
+      top:0;
+      right:-275px;
+      width:275px;
+      height:100vh;
+      padding-top: 50px;
+      transition: right 0.5s;
+      padding-left: 10px;
+  }
+  nav ul li{
+      display: block;
+      margin:10px;
+      font-size:20px;
+  }
+  nav ul .fas{
+      position: absolute;
+      top:25px;
+      left:25px;
+      cursor: pointer;
+  }
+  .sidemenu{
+      position: relative;
+      display: block;
+      margin:10px;
+      font-size:20px;
+  }
+  #shopnow{
+      margin-top: 25px;
+      font-size: 15px;
+      text-decoration:underline;
+      text-align: center;
+      position: relative;
+  }
+  #shopnow,#services,#highlights,#faq{
+      margin-top: 25px;
+      font-size: 15px;
+      text-align: center;
+      position: relative;
+  }
+  .dropdown{
+      position: relative;
+      display: inline-block;
+      width: 100%;
+  }
+  #dropdownMenuButton{
+      background-color: rgb(177, 174, 174);
+      position: relative;
+      width:100%;
+  }
+  .dropdown-menu{
+      position: relative;
+      width: 100%;
+      display: none;
+      overflow-y: auto;
+      cursor: pointer;
+  }
+  #dropmenu{
+      background-color: rgb(228, 225, 225);
+  }
+  .dropdown-item{
+      width: 100%;
+      overflow:auto;
+      font-size: medium;
+      background-color: rgb(177, 174, 174);
+  }
+}
+@media only screen and (max-width: 900px){
+  .middle{
+      display:none;
+  }
+}
+
+/* ----- navbar ended ----- */
+
 /* Slider 1 css by tushar */
 
 .slider-body::-webkit-scrollbar {
