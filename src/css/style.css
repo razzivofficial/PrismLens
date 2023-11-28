@@ -1,57 +1,66 @@
+/* main code started */
+
+body {
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 /* ----- navbar started ----- */
 
 /* ----- part first ----- */
-.header{
+.header {
   width: 100%;
   padding: 0px 1px 1px 0px;
   display: flex;
-  align-items:center;
+  align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
 }
-.logo{
+.logo {
   height: 100px;
-  width:200px;
+  width: 200px;
 }
-.inputtext{
+.inputtext {
   height: 50px;
-  width:600px;
+  width: 600px;
   border-radius: 7px;
   padding-left: 20px;
 }
-nav{
+nav {
   display: flex;
-  align-items:center;
+  align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
   padding: 0;
-  font-family: 'Poppins',sans-serif;
+  font-family: "Poppins", sans-serif;
   box-sizing: border-box;
 }
-nav ul li{
+nav ul li {
   display: inline-block;
   list-style: none;
-  margin:10px 10px;
+  margin: 10px 10px;
 }
-nav ul li a{
-  margin-top:50px;
+nav ul li a {
+  margin-top: 50px;
   color: #726161;
   text-decoration: none !important;
-  font-size:16px;
-  position:relative; 
+  font-size: 16px;
+  position: relative;
 }
-nav ul li a::after{
-  content: '';
-  width:0;
+nav ul li a::after {
+  content: "";
+  width: 0;
   height: 3px;
   background: #ba98a3;
   position: absolute;
-  left:0;
+  left: 0;
   bottom: -6px;
   transition: 0.5s;
 }
 /* button */
-.btnhover{
+.btnhover {
   --c: rgb(212, 203, 182);
   text-decoration-color: var(--c);
   font-size: 14px;
@@ -72,7 +81,7 @@ nav ul li a::after{
   margin-top: 30px;
 }
 
-.btnhover span{
+.btnhover span {
   position: absolute;
   width: 25%;
   height: 100%;
@@ -150,7 +159,7 @@ nav ul li span:nth-child(4) {
 }
 
 #signin-form button {
-  background-color: #4CAF50;
+  background-color: #4caf50;
   color: white;
   padding: 10px 15px;
   border: none;
@@ -160,7 +169,7 @@ nav ul li span:nth-child(4) {
 #signin-form button:hover {
   background-color: #45a049;
 }
-#signin-form p{
+#signin-form p {
   text-decoration: underline;
 }
 /* --- sign up --- */
@@ -208,7 +217,7 @@ nav ul li span:nth-child(4) {
   border-radius: 20px;
 }
 #signup-form button {
-  background-color: #4CAF50;
+  background-color: #4caf50;
   color: white;
   padding: 10px 15px;
   border: none;
@@ -218,221 +227,224 @@ nav ul li span:nth-child(4) {
 #signup-form button:hover {
   background-color: #45a049;
 }
-#signup-form p{
+#signup-form p {
   text-decoration: underline;
 }
 /* ----- part second ----- */
-.leftright{
+.leftright {
   background-color: rgb(254, 247, 247);
   margin-left: 1px;
   padding: 0px 0px 0px 0px;
   display: flex;
-  align-items:center;
+  align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
 }
-.left{
+.left {
   display: flex;
-  align-items:center;
+  align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
 }
-.left ul{
+.left ul {
   padding-left: 15px;
 }
-.left ul li{
+.left ul li {
   display: inline-block;
   list-style: none;
-  margin:8px 5px 1px;
+  margin: 8px 5px 1px;
 }
-.left ul li a{
+.left ul li a {
   color: #726161;
   text-decoration: none !important;
-  font-size:16px;
-  position:relative; 
-  transition:transform 0.5s;
+  font-size: 16px;
+  position: relative;
+  transition: transform 0.5s;
 }
-.left ul li a::after{
-  content: '';
-  width:0;
+.left ul li a::after {
+  content: "";
+  width: 0;
   height: 3px;
   background: #ba98a3;
   position: absolute;
-  left:0;
+  left: 0;
   bottom: -6px;
   transition: 0.5s;
 }
-.left ul li a:hover::after{
-  width:100%;
+.left ul li a:hover::after {
+  width: 100%;
 }
-.rightbtn{
-  display:inline-block;
+.rightbtn {
+  display: inline-block;
   width: fit-content;
-  border:1px solid #b6adb0;
+  border: 1px solid #b6adb0;
   padding: 10px 15px;
   border-radius: 8px;
   text-decoration: none;
   color: white;
   border-color: #fff;
 }
-#firstbtn{
-  color:rgb(243, 240, 240);
+#firstbtn {
+  color: rgb(243, 240, 240);
   background-color: #067008;
 }
-#secondbtn{
+#secondbtn {
   color: rgb(1, 1, 56);
   background-color: rgb(198, 236, 248);
 }
-#thirdbtn{
+#thirdbtn {
   color: rgb(164, 142, 30);
   background-color: rgb(1, 1, 56);
   margin-right: 5px;
 }
 /* ----- third part ----- */
-.glassimage{
+.glassimage {
   background-color: rgb(245, 240, 240);
   margin-left: 1px;
   padding: 2px 1px 1px 1px;
   display: flex;
-  align-items:center;
+  align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
   margin: 0 auto;
 }
-.glassimage ul{
+.glassimage ul {
   padding-left: 15px;
 }
-.photo{
+.photo {
   margin: 5px;
   border-radius: 7px;
-  height:160px;
-  width:235px;
+  height: 160px;
+  width: 235px;
 }
-img{
-  width:100%;
+img {
+  width: 100%;
 }
 
 /* ----- small screen ----- */
-nav .fas{
+nav .fas {
   display: none;
 }
-.sidemenu{
+.sidemenu {
   display: none;
 }
-@media only screen and (max-width: 1350px){
-  #largescreen{
-      display: none;
+@media only screen and (max-width: 1350px) {
+  #largescreen {
+    display: none;
   }
-  .leftright{
-      display: none;
+  .leftright {
+    display: none;
   }
-  nav .fas{
-      display: block;
-      font-size: 25px;
-      top:500px;
-      margin-right:10px;
+  nav .fas {
+    display: block;
+    font-size: 25px;
+    top: 500px;
+    margin-right: 10px;
   }
-  .fas.stop{
-      margin-right:50%;
-      padding-left: 50%;
+  .fas.stop {
+    margin-right: 50%;
+    padding-left: 50%;
   }
-  .btn.btn4,.btn.btn5{
-      font-size: 16px;
-      border:1px solid grey;
-      height: 40px;
-      border-radius: 10px;
-      display: inline;
+  .btn.btn4,
+  .btn.btn5 {
+    font-size: 16px;
+    border: 1px solid grey;
+    height: 40px;
+    border-radius: 10px;
+    display: inline;
   }
-  .btn.btn4{
-      margin-left: 10px;
-      display: inline;
-      background-color: #3498db;
-      width: 45%;
+  .btn.btn4 {
+    margin-left: 10px;
+    display: inline;
+    background-color: #3498db;
+    width: 45%;
   }
-  .btn.btn5{
-      margin-left: 5px;
-      display: inline;
-      background-color: rgb(34, 34, 248); 
-      width: 45%;
+  .btn.btn5 {
+    margin-left: 5px;
+    display: inline;
+    background-color: rgb(34, 34, 248);
+    width: 45%;
   }
-  nav ul{
-      background-color: rgb(252, 249, 249);
-      position: fixed;
-      top:0;
-      right:-275px;
-      width:275px;
-      height:100vh;
-      padding-top: 50px;
-      transition: right 0.5s;
-      padding-left: 10px;
+  nav ul {
+    background-color: rgb(252, 249, 249);
+    position: fixed;
+    top: 0;
+    right: -275px;
+    width: 275px;
+    height: 100vh;
+    padding-top: 50px;
+    transition: right 0.5s;
+    padding-left: 10px;
   }
-  nav ul li{
-      display: block;
-      margin:10px;
-      font-size:20px;
+  nav ul li {
+    display: block;
+    margin: 10px;
+    font-size: 20px;
   }
-  nav ul .fas{
-      position: absolute;
-      top:25px;
-      left:25px;
-      cursor: pointer;
+  nav ul .fas {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    cursor: pointer;
   }
-  .sidemenu{
-      position: relative;
-      display: block;
-      margin:10px;
-      font-size:20px;
+  .sidemenu {
+    position: relative;
+    display: block;
+    margin: 10px;
+    font-size: 20px;
   }
-  #shopnow{
-      margin-top: 25px;
-      font-size: 15px;
-      text-decoration:underline;
-      text-align: center;
-      position: relative;
+  #shopnow {
+    margin-top: 25px;
+    font-size: 15px;
+    text-decoration: underline;
+    text-align: center;
+    position: relative;
   }
-  #shopnow,#services,#highlights,#faq{
-      margin-top: 25px;
-      font-size: 15px;
-      text-align: center;
-      position: relative;
+  #shopnow,
+  #services,
+  #highlights,
+  #faq {
+    margin-top: 25px;
+    font-size: 15px;
+    text-align: center;
+    position: relative;
   }
-  .dropdown{
-      position: relative;
-      display: inline-block;
-      width: 100%;
+  .dropdown {
+    position: relative;
+    display: inline-block;
+    width: 100%;
   }
-  #dropdownMenuButton{
-      background-color: rgb(177, 174, 174);
-      position: relative;
-      width:100%;
+  #dropdownMenuButton {
+    background-color: rgb(177, 174, 174);
+    position: relative;
+    width: 100%;
   }
-  .dropdown-menu{
-      position: relative;
-      width: 100%;
-      display: none;
-      overflow-y: auto;
-      cursor: pointer;
+  .dropdown-menu {
+    position: relative;
+    width: 100%;
+    display: none;
+    overflow-y: auto;
+    cursor: pointer;
   }
-  #dropmenu{
-      background-color: rgb(228, 225, 225);
+  #dropmenu {
+    background-color: rgb(228, 225, 225);
   }
-  .dropdown-item{
-      width: 100%;
-      overflow:auto;
-      font-size: medium;
-      background-color: rgb(177, 174, 174);
+  .dropdown-item {
+    width: 100%;
+    overflow: auto;
+    font-size: medium;
+    background-color: rgb(177, 174, 174);
   }
 }
-@media only screen and (max-width: 900px){
-  .middle{
-      display:none;
+@media only screen and (max-width: 900px) {
+  .middle {
+    display: none;
   }
 }
 
 /* ----- navbar ended ----- */
 
 /* Slider 1 css by tushar */
-
 
 .slider-body::-webkit-scrollbar {
   width: 0.5em;
@@ -478,7 +490,6 @@ nav .fas{
 .slider {
   display: flex;
   transition: transform 2s ease-in-out;
-
 }
 
 .slide {
@@ -496,8 +507,6 @@ nav .fas{
 
   user-select: none;
 }
-
-
 
 .arrow.left {
   left: 10px;
@@ -565,14 +574,12 @@ nav .fas{
 
 /* Media Query for smaller screens */
 @media only screen and (max-width: 768px) {
-
   .glass-box,
   .l2 {
     width: 100%;
     /* Set width to 100% for smaller screens */
   }
 }
-
 
 .bttn-1 {
   padding: 5px;
@@ -588,11 +595,14 @@ nav .fas{
   cursor: pointer;
   border-radius: 20px;
 
-  background: linear-gradient(rgb(14, 95, 14), rgb(0, 255, 102), rgb(0, 255, 102), rgb(14, 95, 14));
+  background: linear-gradient(
+    rgb(14, 95, 14),
+    rgb(0, 255, 102),
+    rgb(0, 255, 102),
+    rgb(14, 95, 14)
+  );
   box-shadow: 3px 3px 5px black;
-
 }
-
 
 @media only screen and (max-width: 768px) {
   .slider-body {
@@ -619,7 +629,6 @@ nav .fas{
   }
 }
 
-
 @media only screen and (max-width: 768px) {
   .lower {
     flex-direction: column;
@@ -633,7 +642,6 @@ nav .fas{
     margin: 8px;
     width: 70%;
     justify-content: center;
-
   }
 
   .bttn-1 {
@@ -643,7 +651,6 @@ nav .fas{
     /* Add margin to the top for spacing */
   }
 }
-
 
 .ttttx {
   margin-top: 50px;
@@ -657,10 +664,10 @@ nav .fas{
 
 @keyframes textShadowAnimation {
   0% {
-      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
   }
   100% {
-      text-shadow: -2px -2px 6px rgba(0, 0, 0, 0.5);
+    text-shadow: -2px -2px 6px rgba(0, 0, 0, 0.5);
   }
 }
 
@@ -682,7 +689,6 @@ nav .fas{
 }
 
 /* slider 1 css by tushar end */
-
 
 /* footer section started  */
 
@@ -1105,3 +1111,36 @@ p {
 }
 
 /* footer section ended  */
+
+/* Youtube vide slider code started */
+
+
+.video-container {
+  max-width: 800px;
+  margin: 20px auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.video-box {
+  position: relative;
+  width: calc(33.33% - 20px);
+  margin: 10px;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.video-box:hover {
+  transform: scale(1.05);
+}
+
+.video-box iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Youtube vide slider code ended */
