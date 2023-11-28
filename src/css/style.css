@@ -1114,10 +1114,9 @@ p {
 
 /* Youtube vide slider code started */
 
-
 .video-container {
-  max-width: 1200px;
-  margin: 20px auto;
+  max-width: 1400px;
+  margin: 60px auto;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -1125,7 +1124,8 @@ p {
 
 .video-box {
   position: relative;
-  width: calc(33.33% - 20px); /* Each box takes 50% of the container width */
+  width: calc(33.33% - 20px);
+  height: 300px;
   margin: 10px;
   overflow: hidden;
   border-radius: 10px;
