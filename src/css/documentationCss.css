@@ -20,7 +20,6 @@ section {
 
 #doc-navbar {
   background-color: #fff;
-  width: 100%;
   border-bottom: 1px solid;
 }
 
@@ -99,6 +98,7 @@ pre {
   body {
     flex-direction: row;
   }
+
   #doc-navbar {
     width: 300px;
     position: fixed;
@@ -115,5 +115,20 @@ pre {
   #main-doc {
     margin: 0 20px;
     margin-left: 350px;
+  }
+}
+
+@media only screen and (max-width: 814px) {
+  #doc-navbar {
+    order: -1; /* Move the navigation to the top in the source order */
+    position: relative;
+    width: 100%;
+    background-color: #fff;
+    border-bottom: 1px solid;
+  }
+
+  #main-doc {
+    margin: 0 20px;
+    margin-top: 50px; /* Adjust this value based on your design */
   }
 }
