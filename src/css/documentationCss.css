@@ -120,7 +120,7 @@ pre {
 
 @media only screen and (max-width: 814px) {
   #doc-navbar {
-    order: -1; /* Move the navigation to the top in the source order */
+    order: -1; 
     position: relative;
     width: 100%;
     background-color: #fff;
@@ -129,6 +129,6 @@ pre {
 
   #main-doc {
     margin: 0 20px;
-    margin-top: 50px; /* Adjust this value based on your design */
+    margin-top: 50px;
   }
 }
