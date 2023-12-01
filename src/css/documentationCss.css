@@ -120,7 +120,7 @@ pre {
 
 @media only screen and (max-width: 814px) {
   #doc-navbar {
-    order: -1; 
+    order: -1;
     position: relative;
     width: 100%;
     background-color: #fff;

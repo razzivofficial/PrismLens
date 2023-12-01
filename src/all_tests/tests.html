@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prism Lens Online Screening Test</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        #eye-image {
+            width: 35%;
+            height: auto;
+            /* animation: blink 4s infinite; */
+        }
+
+        @keyframes blink {
+
+            0%,
+            100% {
+                transform: scaleY(1);
+            }
+
+            50% {
+                transform: scaleY(0.1);
+            }
+        }
+
+        #test-container {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .btn-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .btn-primary,
+        .btn-secondary {
+            width: 80%;
+            max-width: 400px;
+            font-size: 24px;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-primary {
+            background-color: #007BFF;
+            color: #fff;
+        }
+
+        .btn-secondary {
+            background-color: #0056b3;
+            color: #fff;
+        }
+
+        .btn-primary:hover,
+        .btn-secondary:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container text-center">
+        <img src="./img/eyes-gif.gif" alt="Blinking Eye" id="eye-image" class="img-fluid">
+
+        <div id="test-container">
+            <h1 style="color: #007BFF;">Prism Lens Online Screening Test</h1>
+            <div class="btn-container">
+                <button class="btn btn-primary" onclick="checkColorBlindness()">Check Your Color Blindness</button>
+                <button class="btn btn-secondary" onclick="checkVision()">Check Your Vision</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        function checkColorBlindness() {
+            // Add your color blindness test logic here
+            alert("Checking color blindness...");
+        }
+
+        function checkVision() {
+            // Add your vision test logic here
+            alert("Checking vision...");
+        }
+    </script>
+
+</body>
+
+</html>
