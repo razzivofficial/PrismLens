@@ -49,11 +49,15 @@
         }
 
         .filter1 img {
-            filter: grayscale(150%);
+            filter: gr(150%);
         }
 
         .filter2 img {
             filter: blur(5px);
+        }
+
+        .filter3 img {
+            filter: none;
         }
 
         .test-button {
@@ -93,7 +97,7 @@
             <div class="slide filter2">
                 <img src="image2.jpg" alt="Image 2">
             </div>
-            <div class="slide">
+            <div class="slide filter3">
                 <img src="image3.jpg" alt="Image 3">
             </div>
         </div>
