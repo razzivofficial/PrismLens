@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Face Glasses Overlay</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            height: 100vh;
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8DwpAXpfwMfPiia8d3FtvSb3Av0sAcfXbVT5H2rdh3cS9s7Ewjrd4IG38KSgsu6dOXoM&usqp=CAU');
+            background-size: cover;
+            background-position: center;
+        }
+
+        h1 {
+            text-align: center;
+            text-decoration: underline;
+            /* Add underline text decoration */
+            margin-top: 20px;
+            /* Adjust the margin for top space */
+        }
+
+        img {
+            border: 5px solid rgba(0, 0, 0, 0.5);
+            /* Faded border with 0.5 opacity */
+            border-radius: 10px;
+        }
+
+        @media only screen and (max-width: 600px) {
+            h1 {
+                font-size: 1.5em;
+                /* Adjust font size for smaller screens */
+            }
+        }
+
+        @media only screen and (max-width: 768px) {
+            body {
+                padding: 10px;
+                /* Adjust padding for smaller screens */
+            }
+        }
+
+        @media only screen and (max-width: 480px) {
+            img {
+                max-width: 100%;
+                /* Make the image responsive */
+            }
+        }
+
+        .bttn-1 {
+            padding: 5px;
+            margin-left: 70px;
+            background: rgb(0, 255, 102);
+            font-size: x-large;
+            border-radius: 3px;
+            transition: background 0.5s ease;
+            transition: border-radius 0.3s ease;
+            margin-top: 50px;
+        }
+
+        .bttn-1:hover {
+            cursor: pointer;
+            border-radius: 20px;
+
+            background: linear-gradient(rgb(14, 95, 14),
+                    rgb(0, 255, 102),
+                    rgb(0, 255, 102),
+                    rgb(14, 95, 14));
+            box-shadow: 3px 3px 5px black;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Face Glasses Overlay</h1>
+    <img src="{{ url_for('video_feed') }}" alt="Face Glasses Overlay">
+    <button class="bttn-1" onclick="changeGlasses()">Change Glasses</button>
+
+    <script>
+        function changeGlasses() {
+            // Send a request to the server to change the glasses
+            fetch('/change_glasses')
+                .then(response => response.text())
+                .then(message => console.log(message))
+                .catch(error => console.error('Error:', error));
+        }
+    </script>
+</body>
+
+
+</html>
