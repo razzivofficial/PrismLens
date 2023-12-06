@@ -3,10 +3,10 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="32x32" href="./resources/Logo/favicon-32x32.png" />
-    <title>Face Glasses Overlay</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="../resources/Logo/favicon-32x32.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PrismLens Glass Overlays</title>
 
     <style>
         body {
@@ -16,116 +16,164 @@
             flex-direction: column;
             align-items: center;
             justify-content: flex-start;
-            min-height: 100vh;
-            background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8DwpAXpfwMfPiia8d3FtvSb3Av0sAcfXbVT5H2rdh3cS9s7Ewjrd4IG38KSgsu6dOXoM&usqp=CAU') center/cover no-repeat;
+            height: 100vh;
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8DwpAXpfwMfPiia8d3FtvSb3Av0sAcfXbVT5H2rdh3cS9s7Ewjrd4IG38KSgsu6dOXoM&usqp=CAU');
+            background-size: cover;
+            background-position: center;
             font-family: 'Arial', sans-serif;
-            color: #333;
-        }
-
-        header {
-            padding: 20px 0;
-            background-color: rgba(255, 255, 255, 0.8);
-            width: 100%;
-            position: fixed;
-            top: 0;
-            z-index: 1000;
         }
 
         h1 {
-            text-align: center;
-            text-decoration: underline;
-            margin-top: 20px;
-            font-size: 2em;
-            color: #006633;
+            position: relative;
+            padding: 0;
+            margin: 0;
+            font-family: "Raleway", sans-serif;
+            font-weight: 300;
+            font-size: 35px;
+            color: #080808;
+            -webkit-transition: all 0.4s ease 0s;
+            -o-transition: all 0.4s ease 0s;
+            transition: all 0.4s ease 0s;
         }
+
+        h1 span {
+            display: block;
+            font-size: 0.5em;
+            line-height: 1.3;
+        }
+
+        h1 em {
+            font-style: normal;
+            font-weight: 600;
+        }
+
+        /* === HEADING STYLE #4 === */
+        .four h1 {
+            text-align: center;
+            padding-bottom: 0.7em;
+        }
+
+        .four h1 span {
+            font-weight: 300;
+            word-spacing: 3px;
+            line-height: 2em;
+            padding-bottom: 0.35em;
+            color: rgba(0, 0, 0, 0.5);
+        }
+
+        .four h1:before {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 60px;
+            height: 1px;
+            content: "";
+            left: 50%;
+            margin-left: -30px;
+            background-color: #777;
+        }
+
 
         img {
             border: 5px solid rgba(0, 0, 0, 0.5);
             border-radius: 10px;
-            max-width: 100%;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
             margin-top: 20px;
+            max-width: 80%;
         }
 
-        .btn-container {
+        @media only screen and (max-width: 600px) {
+            h1 {
+                font-size: 1.5em;
+            }
+        }
+
+        @media only screen and (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+        }
+
+        @media only screen and (max-width: 480px) {
+            img {
+                max-width: 100%;
+            }
+        }
+
+        .button-container {
             display: flex;
             justify-content: space-around;
-            margin-top: 20px;
             width: 100%;
-        }
-
-        .btn-1,
-        .btn-2 {
-            padding: 15px 30px;
-            font-size: 1.5em;
-            border: none;
-            border-radius: 5px;
-            transition: background 0.5s ease, border-radius 0.3s ease, color 0.3s ease;
-            cursor: pointer;
-        }
-
-        .btn-1 {
-            background: linear-gradient(rgb(0, 204, 102), rgb(0, 255, 102));
-        }
-
-        .btn-2 {
-            background: linear-gradient(rgb(255, 102, 0), rgb(255, 153, 51));
-        }
-
-        .btn-1:hover,
-        .btn-2:hover {
-            border-radius: 20px;
-            color: #fff;
-        }
-
-        .bttn-3 {
-            padding: 15px 30px;
-            background: linear-gradient(rgb(0, 102, 255), rgb(51, 153, 255));
-            font-size: 1.5em;
-            border: none;
-            border-radius: 5px;
             margin-top: 20px;
-            transition: background 0.5s ease, border-radius 0.3s ease, color 0.3s ease;
+        }
+
+        .control-btn {
+            padding: 10px 20px;
+            font-size: 1.2em;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            transition: background 0.5s ease, border-radius 0.3s ease, transform 0.3s ease;
             cursor: pointer;
         }
 
-        .bttn-3:hover {
+        .control-btn:hover {
             border-radius: 20px;
-            color: #fff;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+            transform: scale(1.1);
+        }
+
+        .camera-btn {
+            background: linear-gradient(rgb(14, 95, 14), rgb(0, 255, 102), rgb(0, 255, 102), rgb(14, 95, 14));
+        }
+
+        .frame-btn {
+            background: linear-gradient(rgb(95, 14, 14), rgb(255, 0, 0), rgb(255, 0, 0), rgb(95, 14, 14));
+        }
+
+        .bttn-1 {
+            background: linear-gradient(rgb(14, 95, 14), rgb(0, 255, 102), rgb(0, 255, 102), rgb(14, 95, 14));
+            margin-top: 20px;
         }
     </style>
 </head>
 
 <body>
-    <header>
-        <h1>Face Glasses Overlay</h1>
-    </header>
-
-    <img src="{{ url_for('video_feed') }}" alt="Face Glasses Overlay">
-
-    <div class="btn-container">
-        <button class="btn-1" onclick="changeGlasses()">Change Glasses</button>
-        <button class="btn-2" onclick="toggleFilter()">Choose Glasses</button>
-        <button class="bttn-3" onclick="captureImage()">Capture Image</button>
+    <!-- <h1>PrismLens Glass Overlays</h1> -->
+    <div class="four">
+        <h1><span>Choose Frames with help of AI</span> The<em> PrismLens</em> Overlays</h1>
     </div>
+    <img src="{{ url_for('video_feed') }}" alt="PrismLens Glass Overlays">
+    <div class="button-container">
+        <button class="control-btn camera-btn" onclick="toggleCamera()">Toggle Camera</button>
+        <button class="control-btn frame-btn" onclick="selectFrame()">Select Frame</button>
+    </div>
+    <button class="control-btn bttn-1" onclick="changeGlasses()">Change Glasses</button>
 
     <script>
+        function toggleCamera() {
+            // Send a request to the server to toggle the camera
+            console.log('Toggle Camera not working');
+            // Uncomment the fetch code below when you have the server-side logic in place
+            // fetch('/toggle_camera')
+            //     .then(response => response.text())
+            //     .then(message => console.log(message))
+            //     .catch(error => console.error('Error:', error));
+        }
+
+        function selectFrame() {
+            // Send a request to the server to select a different frame
+            fetch('/select_frame')
+                .then(response => response.text())
+                .then(message => console.log(message))
+                .catch(error => console.error('Error:', error));
+        }
+
         function changeGlasses() {
             // Send a request to the server to change the glasses
             fetch('/change_glasses')
                 .then(response => response.text())
                 .then(message => console.log(message))
                 .catch(error => console.error('Error:', error));
-        }
-
-        function toggleFilter() {
-            // Add logic to toggle the filter
-            console.log('Filter Toggled');
-        }
-
-        function captureImage() {
-            // Add logic to capture the image
-            console.log('Image Captured');
         }
     </script>
 </body>
