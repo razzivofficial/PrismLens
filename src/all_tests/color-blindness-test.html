@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+        }
+
+        .slider-container {
+            width: 80%;
+            margin: auto;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .slider-img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .slider-text {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+
+        .carousel {
+            position: relative;
+            display: flex;
+            overflow: hidden;
+        }
+
+        .carousel-inner {
+            display: flex;
+            width: 100%;
+        }
+
+        .carousel-item {
+            width: 100%;
+            flex: 0 0 auto;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .carousel-item.active {
+            opacity: 1;
+        }
+
+        .carousel-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            background-color: #007bff;
+            border: none;
+            border-radius: 50%;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+    </style>
+    <title>ColorBlindnessTestPrismLens</title>
+</head>
+
+<body>
+
+    <div class="slider-container">
+        <div id="colorblind-slider" class="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="../all_tests/img/Red-green color blind test/test1-4.jpg" class="slider-img" alt="Slide 1">
+                    <div class="carousel-caption">
+                        <p class="slider-text">1. Click on the gap of the ring!</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="../all_tests/img/Red-green color blind test/test2-4.jpg" class="slider-img" alt="Slide 2">
+                    <div class="carousel-caption">
+                        <p class="slider-text">2. Continue the test until the diagnosis appears!</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="../all_tests/img/Red-green color blind test/test3-4.jpg" class="slider-img" alt="Slide 3">
+                    <div class="carousel-caption">
+                        <p class="slider-text">3. There are 8 possible directions!</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="../all_tests/img/Red-green color blind test/test4-4.jpg" class="slider-img" alt="Slide 4">
+                    <div class="carousel-caption">
+                        <p class="slider-text">4. The test takes about 1-3 minutes!</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-button prev" onclick="prevSlide()">❮</button>
+            <button class="carousel-button next" onclick="nextSlide()">❯</button>
+        </div>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.carousel-item');
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                if (i === index) {
+                    slide.classList.add('active');
+                } else {
+                    slide.classList.remove('active');
+                }
+            });
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        // Auto slide change every 5 seconds (5000 milliseconds)
+        setInterval(() => {
+            nextSlide();
+        }, 3000);
+    </script>
+</body>
+
+</html>
