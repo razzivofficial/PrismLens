@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../resources/Logo/favicon-32x32.png" />
     <style>
         body {
             background-color: #f8f9fa;
@@ -31,27 +32,22 @@
 
         .carousel {
             position: relative;
-            display: flex;
             overflow: hidden;
         }
 
         .carousel-inner {
             display: flex;
-            width: 100%;
+            transition: transform 0.5s ease-in-out;
         }
 
         .carousel-item {
             width: 100%;
             flex: 0 0 auto;
-            opacity: 0;
-            transition: opacity 0.5s ease-in-out;
+            background-color: #f8f9fa;
         }
 
-        .carousel-item.active {
-            opacity: 1;
-        }
-
-        .carousel-button {
+        .prev,
+        .next {
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
@@ -81,10 +77,10 @@
     <div class="slider-container">
         <div id="colorblind-slider" class="carousel">
             <div class="carousel-inner">
-                <div class="carousel-item active">
+                <div class="carousel-item">
                     <img src="../all_tests/img/Red-green color blind test/test1-4.jpg" class="slider-img" alt="Slide 1">
                     <div class="carousel-caption">
-                        <p class="slider-text">1. Click on the gap of the ring!</p>
+                        <p class="slider-text">1. Click on the gap between the ring!</p>
                     </div>
                 </div>
                 <div class="carousel-item">
@@ -96,49 +92,42 @@
                 <div class="carousel-item">
                     <img src="../all_tests/img/Red-green color blind test/test3-4.jpg" class="slider-img" alt="Slide 3">
                     <div class="carousel-caption">
-                        <p class="slider-text">3. There are 8 possible directions!</p>
+                        <p class="slider-text">3. There are 8 possible directions or gaps!</p>
                     </div>
                 </div>
                 <div class="carousel-item">
                     <img src="../all_tests/img/Red-green color blind test/test4-4.jpg" class="slider-img" alt="Slide 4">
                     <div class="carousel-caption">
-                        <p class="slider-text">4. The test takes about 1-3 minutes!</p>
+                        <p class="slider-text">4. The test takes about 1-3 minutes only!</p>
                     </div>
                 </div>
             </div>
-            <button class="carousel-button prev" onclick="prevSlide()">❮</button>
-            <button class="carousel-button next" onclick="nextSlide()">❯</button>
+            <button class="prev" onclick="prevSlide()">❮</button>
+            <button class="next" onclick="nextSlide()">❯</button>
         </div>
     </div>
 
     <script>
         let currentSlide = 0;
-        const slides = document.querySelectorAll('.carousel-item');
+        const slides = document.querySelector('.carousel-inner');
 
-        function showSlide(index) {
-            slides.forEach((slide, i) => {
-                if (i === index) {
-                    slide.classList.add('active');
-                } else {
-                    slide.classList.remove('active');
-                }
-            });
+        function showSlide() {
+            const slideWidth = slides.clientWidth;
+            slides.style.transform = `translateX(${-currentSlide * slideWidth}px)`;
         }
 
         function prevSlide() {
-            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-            showSlide(currentSlide);
+            currentSlide = (currentSlide - 1 + slides.children.length) % slides.children.length;
+            showSlide();
         }
 
         function nextSlide() {
-            currentSlide = (currentSlide + 1) % slides.length;
-            showSlide(currentSlide);
+            currentSlide = (currentSlide + 1) % slides.children.length;
+            showSlide();
         }
 
         // Auto slide change every 5 seconds (5000 milliseconds)
-        setInterval(() => {
-            nextSlide();
-        }, 3000);
+        setInterval(nextSlide, 5000);
     </script>
 </body>
 
