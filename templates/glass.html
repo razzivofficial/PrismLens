@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- favicon -->
+    <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="./resources/Logo/favicon-32x32.png" />
     <title>Face Glasses Overlay</title>
 
@@ -16,75 +16,98 @@
             flex-direction: column;
             align-items: center;
             justify-content: flex-start;
-            height: 100vh;
-            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8DwpAXpfwMfPiia8d3FtvSb3Av0sAcfXbVT5H2rdh3cS9s7Ewjrd4IG38KSgsu6dOXoM&usqp=CAU');
-            background-size: cover;
-            background-position: center;
+            min-height: 100vh;
+            background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8DwpAXpfwMfPiia8d3FtvSb3Av0sAcfXbVT5H2rdh3cS9s7Ewjrd4IG38KSgsu6dOXoM&usqp=CAU') center/cover no-repeat;
+            font-family: 'Arial', sans-serif;
+            color: #333;
+        }
+
+        header {
+            padding: 20px 0;
+            background-color: rgba(255, 255, 255, 0.8);
+            width: 100%;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
         }
 
         h1 {
             text-align: center;
             text-decoration: underline;
-            /* Add underline text decoration */
             margin-top: 20px;
-            /* Adjust the margin for top space */
+            font-size: 2em;
+            color: #006633;
         }
 
         img {
             border: 5px solid rgba(0, 0, 0, 0.5);
-            /* Faded border with 0.5 opacity */
             border-radius: 10px;
+            max-width: 100%;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            margin-top: 20px;
         }
 
-        @media only screen and (max-width: 600px) {
-            h1 {
-                font-size: 1.5em;
-                /* Adjust font size for smaller screens */
-            }
+        .btn-container {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+            width: 100%;
         }
 
-        @media only screen and (max-width: 768px) {
-            body {
-                padding: 10px;
-                /* Adjust padding for smaller screens */
-            }
-        }
-
-        @media only screen and (max-width: 480px) {
-            img {
-                max-width: 100%;
-                /* Make the image responsive */
-            }
-        }
-
-        .bttn-1 {
-            padding: 5px;
-            margin-left: 70px;
-            background: rgb(0, 255, 102);
-            font-size: x-large;
-            border-radius: 3px;
-            transition: background 0.5s ease;
-            transition: border-radius 0.3s ease;
-            margin-top: 50px;
-        }
-
-        .bttn-1:hover {
+        .btn-1,
+        .btn-2 {
+            padding: 15px 30px;
+            font-size: 1.5em;
+            border: none;
+            border-radius: 5px;
+            transition: background 0.5s ease, border-radius 0.3s ease, color 0.3s ease;
             cursor: pointer;
-            border-radius: 20px;
+        }
 
-            background: linear-gradient(rgb(14, 95, 14),
-                    rgb(0, 255, 102),
-                    rgb(0, 255, 102),
-                    rgb(14, 95, 14));
-            box-shadow: 3px 3px 5px black;
+        .btn-1 {
+            background: linear-gradient(rgb(0, 204, 102), rgb(0, 255, 102));
+        }
+
+        .btn-2 {
+            background: linear-gradient(rgb(255, 102, 0), rgb(255, 153, 51));
+        }
+
+        .btn-1:hover,
+        .btn-2:hover {
+            border-radius: 20px;
+            color: #fff;
+        }
+
+        .bttn-3 {
+            padding: 15px 30px;
+            background: linear-gradient(rgb(0, 102, 255), rgb(51, 153, 255));
+            font-size: 1.5em;
+            border: none;
+            border-radius: 5px;
+            margin-top: 20px;
+            transition: background 0.5s ease, border-radius 0.3s ease, color 0.3s ease;
+            cursor: pointer;
+        }
+
+        .bttn-3:hover {
+            border-radius: 20px;
+            color: #fff;
         }
     </style>
 </head>
 
 <body>
-    <h1>Face Glasses Overlay</h1>
+    <header>
+        <h1>Face Glasses Overlay</h1>
+    </header>
+
     <img src="{{ url_for('video_feed') }}" alt="Face Glasses Overlay">
-    <button class="bttn-1" onclick="changeGlasses()">Change Glasses</button>
+
+    <div class="btn-container">
+        <button class="btn-1" onclick="changeGlasses()">Change Glasses</button>
+        <button class="btn-2" onclick="toggleFilter()">Choose Glasses</button>
+        <button class="bttn-3" onclick="captureImage()">Capture Image</button>
+    </div>
 
     <script>
         function changeGlasses() {
@@ -94,8 +117,17 @@
                 .then(message => console.log(message))
                 .catch(error => console.error('Error:', error));
         }
+
+        function toggleFilter() {
+            // Add logic to toggle the filter
+            console.log('Filter Toggled');
+        }
+
+        function captureImage() {
+            // Add logic to capture the image
+            console.log('Image Captured');
+        }
     </script>
 </body>
-
 
 </html>
