@@ -316,7 +316,30 @@ nav ul li span:nth-child(4) {
   border-radius: 7px;
   height: 160px;
   width: 235px;
+  transition: transform 0.7s;
+  filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5));
+  animation: shadowAnimation 2s ease-in-out infinite;
 }
+
+@keyframes shadowAnimation {
+  0% {
+      filter: drop-shadow(5px 5px 10px rgba(99, 97, 97, 0.5));
+  }
+  50% {
+      filter: drop-shadow(10px 10px 20px rgba(98, 96, 96, 0.7));
+  }
+  100% {
+      filter: drop-shadow(5px 5px 10px rgba(107, 106, 106, 0.5));
+  }
+}
+
+.photo:hover{
+  transform: scale(1.03);
+  cursor: pointer;
+}
+
+
+
 img {
   width: 100%;
 }
@@ -1144,3 +1167,6 @@ p {
 }
 
 /* Youtube vide slider code ended */
+
+
+
