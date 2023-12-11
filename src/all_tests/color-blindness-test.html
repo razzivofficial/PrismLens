@@ -118,12 +118,62 @@
                 padding: .75rem 2rem;
             }
         }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0, 0, 0);
+            background-color: rgba(0, 0, 0, 0.4);
+            padding-top: 60px;
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+
+        .close {
+            color: #aaaaaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
     </style>
     <title>ColorBlindnessTest PrismLens</title>
 </head>
 
 <body>
-
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <p>Welcome to our Online Vision Screening, designed to offer an initial assessment of your vision. It's
+                essential to note that this screening is not a medical test and should not replace professional eye
+                care. It
+                does not diagnose or address diseases. The purpose is to provide a general understanding of your visual
+                acuity, suggesting whether a comprehensive eye exam with a trained professional is advisable. We
+                recommend
+                regular eye check-ups every two years, or sooner if you observe changes in your vision. Please be aware
+                that
+                Carl Zeiss Vision Inc. and other Carl Zeiss Group companies assume no responsibility for damages or
+                consequences resulting from the Online Vision Screening or the provided information.</p>
+        </div>
+    </div>
     <div class="slider-container">
         <div id="colorblind-slider" class="carousel">
             <div class="carousel-inner">
@@ -156,7 +206,8 @@
             <button class="next" onclick="nextSlide()">❯</button>
         </div>
         <div class="button-container">
-            <button class="button-73" role="button">I Agree</button>
+            <button id="agreeButton" class="button-73" role="button" onclick="toggleAgree()">Terms and
+                Conditions</button>
         </div>
     </div>
 
@@ -180,6 +231,29 @@
         }
 
         setInterval(nextSlide, 5000);
+
+        // Modal Script
+        function openModal() {
+            document.getElementById('myModal').style.display = 'block';
+        }
+
+        function closeModal() {
+            document.getElementById('myModal').style.display = 'none';
+        }
+
+        // Toggle Agree Button Text
+        function toggleAgree() {
+            const button = document.getElementById('agreeButton');
+            const buttonText = button.innerText;
+
+            if (buttonText === 'Terms and Conditions') {
+                openModal();
+                button.innerText = 'I Agree';
+            } else if (buttonText === 'I Agree') {
+                // Simulate redirecting to the next page
+                window.location.href = 'next-page.html';
+            }
+        }
     </script>
 </body>
 
