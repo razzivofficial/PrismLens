@@ -17,21 +17,17 @@ for (let i = 0; i < coll.length; i++) {
 }
 
 function getTime() {
-    let today = new Date();
-    hours = today.getHours();
-    minutes = today.getMinutes();
+    var now = new Date();
+    var hours = now.getHours().toString().padStart(2, '0');
+    var minutes = now.getMinutes().toString().padStart(2, '0');
+    var seconds = now.getSeconds().toString().padStart(2, '0');
 
-    if (hours < 10) {
-        hours = "0" + hours;
-    }
-
-    if (minutes < 10) {
-        minutes = "0" + minutes;
-    }
-
-    let time = hours + ":" + minutes;
-    return time;
+    var timeString = hours + ':' + minutes + ':' + seconds;
+    document.getElementById("chat-timestamp").innerText = timeString;
+    return timeString;
 }
+    // Update content every second
+    setInterval(getTime, 1000);
 
 // Gets the first message
 function firstBotMessage() {
