@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" sizes="32x32" href="../../resources/Logo/favicon-32x32.png" />
+
     <style>
         body {
             background-color: #f8f9fa;
@@ -19,7 +20,7 @@
         }
 
         .slider-img {
-            width: 80%;
+            width: 60%;
             border-radius: 10px;
             margin-bottom: 20px;
             transition: opacity 0.5s ease-in-out;
@@ -69,6 +70,54 @@
         .next {
             right: 10px;
         }
+
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .button-73 {
+            appearance: none;
+            background-color: #FFFFFF;
+            border-radius: 40em;
+            border-style: none;
+            box-shadow: #ADCFFF 0 -12px 6px inset;
+            box-sizing: border-box;
+            color: #000000;
+            cursor: pointer;
+            display: inline-block;
+            font-family: -apple-system, sans-serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            letter-spacing: -.24px;
+            margin: 0;
+            outline: none;
+            padding: 1rem 1.3rem;
+            quotes: auto;
+            text-align: center;
+            text-decoration: none;
+            transition: all .15s;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+        }
+
+        .button-73:hover {
+            background-color: #3cda03;
+            box-shadow: #86ff14 0 -6px 8px inset;
+            transform: scale(1.125);
+        }
+
+        .button-73:active {
+            transform: scale(1.025);
+        }
+
+        @media (min-width: 768px) {
+            .button-73 {
+                font-size: 1.5rem;
+                padding: .75rem 2rem;
+            }
+        }
     </style>
     <title>ColorBlindnessTest PrismLens</title>
 </head>
@@ -106,6 +155,9 @@
             <button class="prev" onclick="prevSlide()">❮</button>
             <button class="next" onclick="nextSlide()">❯</button>
         </div>
+        <div class="button-container">
+            <button class="button-73" role="button">I Agree</button>
+        </div>
     </div>
 
     <script>
@@ -127,7 +179,6 @@
             showSlide();
         }
 
-        // Auto slide change every 5 seconds (5000 milliseconds)
         setInterval(nextSlide, 5000);
     </script>
 </body>
