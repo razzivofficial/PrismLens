@@ -232,7 +232,6 @@
 
         setInterval(nextSlide, 5000);
 
-        // Modal Script
         function openModal() {
             document.getElementById('myModal').style.display = 'block';
         }
@@ -241,7 +240,6 @@
             document.getElementById('myModal').style.display = 'none';
         }
 
-        // Toggle Agree Button Text
         function toggleAgree() {
             const button = document.getElementById('agreeButton');
             const buttonText = button.innerText;
@@ -250,7 +248,6 @@
                 openModal();
                 button.innerText = 'I Agree';
             } else if (buttonText === 'I Agree') {
-                // Simulate redirecting to the next page
                 window.location.href = 'next-page.html';
             }
         }
