@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image Selection Game</title>
+    <title>Image Recognition Quiz</title>
     <style>
         #image-container {
             position: relative;
@@ -72,6 +72,12 @@
             height: 100%;
             object-fit: cover;
         }
+
+        #score {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 18px;
+        }
     </style>
 </head>
 
@@ -93,22 +99,67 @@
         <div class="section" data-section="8">
             <div class="line"></div>
         </div>
-        <img src="./image1.jpg" alt="Image">
+        <img id="quiz-image" src="./image1.jpg" alt="Quiz Image">
     </div>
 
+    <div id="score">Score: 0</div>
+
     <script>
+        let currentImageIndex = 0;
+        let score = 0;
+
+        const quizData = [
+            { image: './image2.jpg', correctSection: '8' },
+            { image: './image3.jpg', correctSection: '3' },
+            { image: './image1.jpg', correctSection: '6' },
+            // Add more images and correct sections as needed
+        ];
+
         const sections = document.querySelectorAll('.section');
+        const quizImage = document.getElementById('quiz-image');
+        const scoreElement = document.getElementById('score');
 
         sections.forEach(section => {
             section.addEventListener('click', () => {
                 const selectedSection = section.getAttribute('data-section');
-                if (selectedSection === '8' || selectedSection === '1') {
-                    console.log('Correct Selection!');
-                } else {
-                    console.log('Wrong Selection!');
+                const currentQuizData = quizData[currentImageIndex];
+                if (selectedSection === currentQuizData.correctSection) {
+                    score++;
                 }
+                showNextImage();
             });
         });
+
+        function showNextImage() {
+            currentImageIndex++;
+            if (currentImageIndex < quizData.length) {
+                const currentQuizData = quizData[currentImageIndex];
+                quizImage.src = currentQuizData.image;
+                resetSections();
+            } else {
+                alert('Quiz completed! Your score: ' + score);
+                resetQuiz();
+            }
+        }
+
+        function resetSections() {
+            sections.forEach(section => {
+                section.style.display = 'block';
+            });
+        }
+
+        function resetQuiz() {
+            currentImageIndex = 0;
+            score = 0;
+            const currentQuizData = quizData[currentImageIndex];
+            quizImage.src = currentQuizData.image;
+            resetSections();
+            updateScore();
+        }
+
+        function updateScore() {
+            scoreElement.textContent = 'Score: ' + score;
+        }
     </script>
 </body>
 
