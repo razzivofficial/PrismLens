@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/src/css/documentationCss.css" />
+  <title>PrismLens Documentation</title>
+  <style>
+    /* Add your custom styles here */
+    .details {
+      display: none;
+    }
+
+    .details.active {
+      display: block;
+    }
+
+    .doc-nav-link {
+      cursor: pointer;
+      color: blue;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="doc-main-div">
+    <nav id="doc-navbar">
+      <header>PrismLens Documentation</header>
+      <ul>
+        <li>
+          <a class="doc-nav-link" href="#myopia">Myopia (Nearsightedness)</a>
+        </li>
+        <li>
+          <a class="doc-nav-link" href="#hyperopia">Hyperopia (Farsightedness)</a>
+        </li>
+        <li>
+          <a class="doc-nav-link" href="#color_blindness">Color Blindness</a>
+        </li>
+        <li>
+          <a class="doc-nav-link" href="#frame_recommendations">Frame Recommendations</a>
+        </li>
+        <li>
+          <a class="doc-nav-link" href="#prism_lens_help">How PrismLens Helps</a>
+        </li>
+      </ul>
+    </nav>
+    <main id="main-doc">
+      <section class="main-section" id="myopia">
+        <header>Myopia (Nearsightedness)</header>
+        <p>Myopia is a common refractive error where distant objects appear blurry, but close objects can be seen clearly. It is often caused by a longer eyeball or a more curved cornea.</p>
+        <p>Causes, symptoms, and basic details about myopia can be explored in the following sections.</p>
+      </section>
+
+      <section class="main-section" id="hyperopia">
+        <header>Hyperopia (Farsightedness)</header>
+        <p>Hyperopia is a refractive error where distant objects may be seen more clearly than close ones. It is caused by an eyeball that is too short or a cornea that has too little curvature.</p>
+        <p>Details about hyperopia can be explored in the following sections.</p>
+      </section>
+
+      <section class="main-section" id="color_blindness">
+        <header>Color Blindness</header>
+        <p>Color blindness is a visual impairment that affects the perception of certain colors. The most common types are red-green and blue-yellow color blindness.</p>
+        <p>Explore more about color blindness in the following sections.</p>
+      </section>
+
+      <section class="main-section" id="frame_recommendations">
+        <header>Frame Recommendations</header>
+        <p>Choosing the right frames is crucial for comfort and visual correction. Factors such as face shape, style, and lens material play a role in frame recommendations.</p>
+        <p>Discover more about frame recommendations in the following sections.</p>
+      </section>
+
+      <section class="main-section" id="prism_lens_help">
+        <header>How PrismLens Helps</header>
+        <p>PrismLens is a comprehensive solution that goes beyond diagnosing vision issues. It offers tailored lens recommendations, educational insights, and a secure entry into its colorful world.</p>
+        <p>Explore the features of PrismLens and how it revolutionizes accessibility.</p>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    // Add JavaScript to toggle active class for displaying details
+    document.addEventListener('DOMContentLoaded', function () {
+      const links = document.querySelectorAll('.doc-nav-link');
+      links.forEach(link => {
+        link.addEventListener('click', function (event) {
+          event.preventDefault();
+          const sectionId = this.getAttribute('href').substring(1);
+          const section = document.getElementById(sectionId);
+
+          // Remove 'active' class from all sections
+          document.querySelectorAll('.main-section').forEach(section => {
+            section.classList.remove('active');
+          });
+
+          // Add 'active' class to the clicked section
+          section.classList.add('active');
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>
