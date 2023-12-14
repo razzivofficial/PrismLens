@@ -48,9 +48,9 @@ body {
     font-size: x-large;
     background-color: #ecf0f4;
 }
-#inst1,#inst2{
+#inst1{
     height: auto;
-    width: 45%;
+    width: 30%;
 }
 #inst2{
     height: auto;
