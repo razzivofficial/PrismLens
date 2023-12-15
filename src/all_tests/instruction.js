@@ -35,3 +35,23 @@ function back()
 {
     window.location.href = 'color-blindness-test.html';
 }
+
+// scroller
+
+var rangeInput = document.querySelector('.input-range');
+var rectangle = document.querySelector('.rectangle');
+
+rangeInput.addEventListener('input', function() {
+    var scrollPercentage = this.value / this.max;
+    var newHeight = scrollPercentage * document.documentElement.scrollHeight;
+    var newwidth = scrollPercentage * document.documentElement.scrollHeight;
+    rectangle.style.height = newHeight/3 + 'px';
+    rectangle.style.width = newHeight/1.5 + 'px';
+});
+window.addEventListener('scroll', function () {
+    var scrollPercentage = rangeInput.value / rangeInput.max;
+    var newHeight = scrollPercentage * document.documentElement.scrollHeight;
+    var newwidth = scrollPercentage * document.documentElement.scrollHeight;
+    rectangle.style.height = newHeight + 'px';
+    rectangle.style.width = newHeight + 'px';
+});
