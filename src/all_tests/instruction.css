@@ -52,10 +52,35 @@ body {
     height: auto;
     width: 30%;
 }
-#inst2{
-    height: auto;
-    width: 40%;
+.range-slider {
+    position: relative;
+    top: 130px;
+    right: 250px;
 }
+
+.input-range {
+    writing-mode: bt-lr;
+    -webkit-appearance: slider-vertical;
+    width: 150px;
+    height: 75px;
+    transform: rotate(0deg);
+}
+.rectangle {
+    margin-top: 50px;
+    margin-left: 500px;
+    margin-bottom: 0px;
+    width: 100px;
+    height: 30px;
+    top: 200px;
+    border: 2px solid grey;
+    border-style: dotted;
+    border-radius: 10px;
+    padding: 3%;
+}
+.textrectangle{
+    display: none;
+}
+
 #inst3,#inst4,#inst5,#inst6{
     height: auto;
     width: 50%;
@@ -77,21 +102,6 @@ body {
     width: 100%;
     flex: 0 0 auto;
     background-color: #ecf0f4;
-}
-
-.prev,
-.next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 40px;
-    height: 40px;
-    background-color: #007bff;
-    border: none;
-    border-radius: 50%;
-    color: white;
-    font-size: 20px;
-    cursor: pointer;
 }
 
 .decision{
