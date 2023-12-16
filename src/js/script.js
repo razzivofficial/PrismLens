@@ -12,8 +12,8 @@ function closemenu() {
 
 // sign in
 function togglePopupsignin() {
-  var popup = document.getElementById("signin-popup");
-  var overlay = document.querySelector(".overlaysignin");
+  let popup = document.getElementById("signin-popup");
+  let overlay = document.querySelector(".overlaysignin");
 
   if (popup.style.display === "block") {
     popup.style.display = "none";
@@ -24,15 +24,15 @@ function togglePopupsignin() {
   }
 }
 function signIn() {
-  var username = document.getElementById("username").value;
-  var password = document.getElementById("password").value;
+  let username = document.getElementById("username").value;
+  let password = document.getElementById("password").value;
   togglePopup();
 }
 
 // sign up
 function togglePopupsignup() {
-  var popup = document.getElementById("signup-popup");
-  var overlay = document.querySelector(".overlaysignup");
+  let popup = document.getElementById("signup-popup");
+  let overlay = document.querySelector(".overlaysignup");
 
   if (popup.style.display === "block") {
     popup.style.display = "none";
@@ -43,24 +43,28 @@ function togglePopupsignup() {
   }
 }
 function signUp() {
-  var name = document.getElementById("name").value;
-  var email = document.getElementById("email").value;
-  var mobile = document.getElementById("mobile").value;
-  var password = document.getElementById("password").value;
-  alert(
-    "Name: " +
-      name +
-      "\nEmail: " +
-      email +
-      "\nMobile: " +
-      mobile +
-      "\nPassword: " +
-      password
-  );
+  let name = document.getElementById("name").value;
+  let email = document.getElementById("email").value;
+  let mobile = document.getElementById("mobile").value;
+  let password = document.getElementById("password").value;
   togglePopup();
   return false;
 }
 
+function newuser(){
+  let popup = document.getElementById("signin-popup");
+  let overlay = document.querySelector(".overlaysignin");
+  popup.style.display='none';
+  overlay.style.display='none';
+  togglePopupsignup();
+}
+function olduser(){
+  let popup = document.getElementById("signup-popup");
+  let overlay = document.querySelector(".overlaysignup");
+  popup.style.display='none';
+  overlay.style.display='none';
+  togglePopupsignin();
+}
 // -----> navbar ended
 
 /* Slider js by tushar start */

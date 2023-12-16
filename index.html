@@ -42,15 +42,18 @@
                         <div class="overlaysignin" onclick="togglePopupsignin()"></div>
                         <div id="signin-popup">
                             <div id="signin-form">
-                                <h2>Sign In</h2>
-                                <form>
-                                    <label for="username">Username:</label>
+                                <h2 class="signin">SIGNIN</h2><hr class="horizontal">
+                                <form action="loginvefi.jsp" method="post" class="sign-in">
+                                    <label for="email">Email:</label>
                                     <input type="text" id="email" name="email" placeholder="Email" required />
                                     <label for="password">Password:</label>
-                                    <input type="password" id="password" name="password" placeholder="Password"
-                                        required />
+                                    <input type="password" id="password" name="password" placeholder="Password" required />
+                                    <!-- <p class="check-mark">
+                                        <input type="checkbox" id="remember-me">
+                                        <label for="remember-me">Remember me</label>
+                                    </p> -->
                                     <button type="submit" onclick="signIn()">Sign In</button>
-                                    <p>New member? Create an Account</p>
+                                    <p onclick="newuser()">New member? Create an Account</p>
                                 </form>
                             </div>
                         </div>
@@ -60,19 +63,22 @@
                         <div class="overlaysignup" onclick="togglePopupsignup()"></div>
                         <div id="signup-popup">
                             <div id="signup-form">
-                                <h2>Sign Up</h2>
-                                <form onsubmit="return signUp()">
-                                    <label for="name">Name:</label>
-                                    <input type="text" id="name" name="name" placeholder="Name" required />
-                                    <label for="email">Email:</label>
-                                    <input type="email" id="email" name="email" placeholder="Email" required />
+                                <h2 class="signup">SIGNUP</h2><hr class="horizontal">
+                                <form action="Register.jsp" method="post" class="register">
+                                    <label for="name-register">Name:</label>
+                                    <input type="text" name="name" id="name-register" placeholder="Name" required />
+                                    <label for="email-register">Email:</label>
+                                    <input type="text" name="email" id="email-register" placeholder="Email" required />
                                     <label for="mobile">Mobile Number:</label>
-                                    <input type="tel" id="mobile" name="mobile" placeholder="Mobile" required />
-                                    <label for="password">Create Password:</label>
-                                    <input type="password" id="password" name="password" placeholder="Password"
-                                        required />
+                                    <input type="tel" name="mobile" id="mobile" placeholder="Mobile" required />
+                                    <label for="password-register">Create Password:</label>
+                                    <input type="password" name="password" id="password-register" placeholder="Password" required />
+                                    <!-- <p class="check-mark">
+                                      <input type="checkbox" id="accept-terms">
+                                      <label for="accept-terms">I agree to the <a href="#">Terms</a></label>
+                                    </p> -->
                                     <button type="submit">Sign Up</button>
-                                    <p>Have an account? Sign In</p>
+                                    <p onclick="olduser()">Have an account? Sign In</p>
                                 </form>
                             </div>
                         </div>
@@ -95,57 +101,16 @@
                         </li>
                         <li class="sidemenu"><a href="#trackorder">Track Order</a></li>
                         <li class="sidemenu">
-                            <i class="fa-regular fa-heart fa-2xs"></i><a href="#wishlist"> Wishlist</a>
+                            <!-- <i class="fa-regular fa-heart fa-2xs"></i> --><a href="#wishlist"> Wishlist</a>
                         </li>
                         <li class="sidemenu">
-                            <i class="fa-solid fa-cart-shopping fa-2xs"></i><a href="#cart"> Cart</a>
+                            <!-- <i class="fa-solid fa-cart-shopping fa-2xs"></i> --><a href="#cart"> Cart</a>
                         </li>
                         <li class="sidemenu">
                             <a href="#notification">Manage Notification</a>
                         </li>
                         <li class="sidemenu">
                             <a href="#contactus">Contact Us</a>
-                        </li>
-                        <!-- shop now -->
-                        <p class="sidemenu" id="shopnow">SHOP NOW</p>
-                        <li class="sidemenu">
-                            <div class="dropdown">
-                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
-                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                                    onclick="toggle(this)">Mens</button>
-                                <div class="dropdown-menu" id="dropmenu" aria-labelledby="dropdownMenuButton">
-                                    <a class="dropdown-item" href="#">EYEGLASSES</a>
-                                    <a class="dropdown-item" href="#">COMPUTER GLASSES</a>
-                                    <a class="dropdown-item" href="#">SUN GLASSES</a>
-                                    <a class="dropdown-item" href="#">CONTACT LENSES</a>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="sidemenu">
-                            <div class="dropdown">
-                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
-                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                                    onclick="toggle(this)">Mens</button>
-                                <div class="dropdown-menu" id="dropmenu" aria-labelledby="dropdownMenuButton">
-                                    <a class="dropdown-item" href="#">EYEGLASSES</a>
-                                    <a class="dropdown-item" href="#">COMPUTER GLASSES</a>
-                                    <a class="dropdown-item" href="#">SUN GLASSES</a>
-                                    <a class="dropdown-item" href="#">CONTACT LENSES</a>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="sidemenu">
-                            <div class="dropdown">
-                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
-                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                                    onclick="toggle(this)">Mens</button>
-                                <div class="dropdown-menu" id="dropmenu" aria-labelledby="dropdownMenuButton">
-                                    <a class="dropdown-item" href="#">EYEGLASSES</a>
-                                    <a class="dropdown-item" href="#">COMPUTER GLASSES</a>
-                                    <a class="dropdown-item" href="#">SUN GLASSES</a>
-                                    <a class="dropdown-item" href="#">CONTACT LENSES</a>
-                                </div>
-                            </div>
                         </li>
                         <p class="sidemenu" id="services">OUR SERVICES</p>
                         <li class="sidemenu">
