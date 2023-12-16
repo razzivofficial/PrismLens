@@ -51,6 +51,7 @@ function signUp() {
   return false;
 }
 
+//switch signin-signup
 function newuser(){
   let popup = document.getElementById("signin-popup");
   let overlay = document.querySelector(".overlaysignin");
@@ -65,6 +66,7 @@ function olduser(){
   overlay.style.display='none';
   togglePopupsignin();
 }
+
 // -----> navbar ended
 
 /* Slider js by tushar start */
