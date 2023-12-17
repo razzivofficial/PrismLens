@@ -109,10 +109,10 @@ function getBotResponse(input)
     // namaste - goodbye
     if(input == "1")
     {
-        return "2.signin" + '<p class="botText"><span>' + 
-        "3.signup" + '<p class="botText"><span>' + 
-        "4.already signin/singup" + '</span></p>';
-    }       
+        return "2. <a href='#' onclick='togglePopupsignin()'>Sign In</a>" + '<p class="botText"><span>'+
+        "3. <a href='#' onclick='togglePopupsignup()'>Sign Up</a>" + '<p class="botText"><span>'+
+        "4.already -> signin/singup" + '</span></p>';
+    }     
     else if (input == "0")
     {
         return "Goodbye";
@@ -124,11 +124,11 @@ function getBotResponse(input)
         // signin-signup - problem
         if(input == "2")
         {
-            return "first signin";
+            return "<a href='#' onclick='togglePopupsignin()'>Sign In</a>";
         }
         else if(input == "3")
         {
-            return "create account";
+            return "<a href='#' onclick='togglePopupsignup()'>Sign Up</a>";
         }
             
         else if(input == "4")
@@ -157,7 +157,7 @@ function getBotResponse(input)
 
         if(input == "11" || input == "12" || input == "13")
         {
-            return "Now check";
+            return '<a href="http://127.0.0.1:5000/" target="_blank">Now check</a>';
         }
 
     }
