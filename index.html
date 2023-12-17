@@ -200,7 +200,7 @@
                 </ul>
             </div>
             <div class="right">
-                <a href="http://127.0.0.1:5000/" target="_blank"><button class="btn btn1" id="firstbtn">3D
+                <a href="http://127.0.0.1:5000/" ><button class="btn btn1" id="firstbtn">3D
                         TRY</button></a>
                 <button class="btn btn2" id="secondbtn">BLU</button>
                 <button class="btn btn3" id="thirdbtn">GOLD</button>
@@ -312,25 +312,26 @@
             <div class="l1">
                 <div class="glass-box"><img class="img-slider"
                         src="https://static1.lenskart.com/media/desktop/img/Sep21/image179.png" alt=""></div>
-                <div class="l2"><button class="bttn-1">Explore</button></div>
+                <div class="l2"><button class="bttn-1" onclick="openPopup()">Explore</button></div>
             </div>
             <div class="l1">
                 <div class="glass-box"><img class="img-slider"
                         src="https://static1.lenskart.com/media/desktop/img/Sep21/trans.jpg" alt=""></div>
-                <div class="l2"><button class="bttn-1">Explore</button></div>
+                <div class="l2"><button class="bttn-1" onclick="openPopup()">Explore</button></div>
             </div>
             <div class="l1">
                 <div class="glass-box"><img class="img-slider"
                         src="https://static1.lenskart.com/media/desktop/img/Sep21/clubmaster.jpg" alt=""></div>
-                <div class="l2"><button class="bttn-1">Explore</button></div>
+                <div class="l2"><button class="bttn-1" onclick="openPopup()">Explore</button></div>
             </div>
             <div class="l1">
                 <div class="glass-box"><img class="img-slider"
                         src="https://static1.lenskart.com/media/desktop/img/Sep21/cateeye.jpg" alt=""></div>
-                <div class="l2"><button class="bttn-1">Explore</button></div>
+                <div class="l2"><button class="bttn-1" onclick="openPopup()">Explore</button></div>
             </div>
         </div>
 
+        
 
         <div class="middle-lower">
             <div class="ttttx">
@@ -405,6 +406,10 @@
 
 
     </div>
+
+
+
+
     <!-- slider section ended -->
 
     <!-- youtube slider and promotions by rajiv started-->
@@ -623,6 +628,25 @@
             </div>
             <!-- End Copyright Container -->
         </div>
+
+            <!-- Popup container -->
+    <div class="overlay" id="overlay"></div>
+    <div class="popup" id="popup">
+        
+        <!-- Close button -->
+        <div class="close-button-round-x">
+        <span class="close-button" onclick="closePopup()">&times;</span>
+        </div>
+        <!-- Popup content -->
+        <h3>Here is our product</h3>
+        <p class="p-discription">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellendus ut libero eveniet natus quidem, itaque mollitia veritatis corporis, dolorem, facilis sint! Nemo, ducimus sed illum totam amet nulla minima ratione ullam non necessitatibus error harum numquam maiores illo laudantium soluta inventore odit dolore optio eligendi minus blanditiis, excepturi earum ad.
+        </p>
+        <button onclick="addToCart()" class="bttn-1" id="add-to-cart-left">Add to Cart</button>
+        <button class="bttn-1" id="buy-button-right">Buy Now</button>
+    </div>
+    <!-- Pop up container End-->
+
+
         <!-- End Copyright -->
         <!-- Back to top -->
         <div id="back-to-top" class="back-to-top">
