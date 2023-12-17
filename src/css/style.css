@@ -128,7 +128,12 @@ nav ul li span:nth-child(4) {
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
   z-index: 900;
+  transition: box-shadow 0.5s ease-in-out;
+  animation: glow1 2s infinite alternate;
 }
+
+
+
 #signin-popup {
   display: none;
   position: fixed;
@@ -141,7 +146,20 @@ nav ul li span:nth-child(4) {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   z-index: 1000;
   border-radius: 10px;
+  transition: box-shadow 0.5s ease-in-out;
+  animation: glow1 2s infinite alternate;
 }
+
+@keyframes glow1{
+  from{
+    box-shadow: 0 0 20px lightgreen;
+  }
+
+  to{
+    box-shadow: 0 0 50px lightgreen;
+  }
+}
+
 #signin-form {
   text-align: center;
 }
@@ -197,6 +215,18 @@ nav ul li span:nth-child(4) {
   z-index: 1000;
   text-align: center;
   border-radius: 10px;
+  transition: box-shadow 0.5s ease-in-out;
+  animation: glow1 2s infinite alternate;
+}
+
+@keyframes glow1{
+  from{
+    box-shadow: 0 0 20px lightgreen;
+  }
+
+  to{
+    box-shadow: 0 0 50px lightgreen;
+  }
 }
 
 #signup-form {
@@ -1286,4 +1316,8 @@ p {
     max-height: none; /* Remove max-height for scrollability on small screens */
   }
 }
+
+
+
+
 /* Add any additional styles for your button, image, etc. */
