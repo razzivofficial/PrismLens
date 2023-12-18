@@ -6,7 +6,6 @@ body {
   padding: 0;
   box-sizing: border-box;
 }
-
 /* ----- navbar started ----- */
 
 /* ----- part first ----- */
@@ -22,11 +21,26 @@ body {
   height: 100px;
   width: 200px;
 }
-.inputtext {
-  height: 50px;
-  width: 600px;
+.search-bar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 40%;
+  margin-left:50px;
+}
+.search-input {
+  flex-grow: 1;
+  padding: 10px;
+  padding-left: 15px;
   border-radius: 7px;
-  padding-left: 20px;
+  font-size: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+#search-icon {
+  margin-left: -25px;
+  cursor: pointer;
+  border-left: 1px solid black;
 }
 nav {
   display: flex;
@@ -41,6 +55,7 @@ nav ul li {
   display: inline-block;
   list-style: none;
   margin: 10px 10px;
+  cursor: pointer;
 }
 nav ul li a {
   margin-top: 50px;
@@ -137,12 +152,12 @@ nav ul li span:nth-child(4) {
 #signin-popup {
   display: none;
   position: fixed;
-  top: 50%;
-  left: 50%;
+  top: 5%;
+  left: 27%;
   transform: translate(-50%, -50%);
   padding: 20px;
-  background-color: #fff;
-  border: 1px solid #ccc;
+  background-color: rgb(222, 218, 218);
+  border: 1px solid  rgb(222, 218, 218);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   z-index: 1000;
   border-radius: 10px;
@@ -168,27 +183,38 @@ nav ul li span:nth-child(4) {
   display: block;
   margin-bottom: 10px;
 }
+.horizontal{
+  border: 1px solid rgb(146, 146, 146);
+  
+}
 #signin-form input {
-  width: 100%;
-  padding: 8px;
+  width: 400px;
+  padding: 10px;
   margin-bottom: 15px;
   box-sizing: border-box;
-  border-radius: 20px;
+  border-radius: 5px;
+  border: none;
+  border-color: grey;
 }
 
 #signin-form button {
-  background-color: #4caf50;
+  background-color: lightblue;
   color: white;
   padding: 10px 15px;
   border: none;
-  border-radius: 4px;
+  border-radius: 5px;
   cursor: pointer;
+  width:400px;
+  margin-top: 10px;
 }
 #signin-form button:hover {
-  background-color: #45a049;
+  background-color: rgb(36, 36, 239);
 }
 #signin-form p {
-  text-decoration: underline;
+  margin-top: 10px;
+  text-decoration: none;
+  cursor: pointer;
+  color: black;
 }
 /* --- sign up --- */
 .overlaysignup {
@@ -205,28 +231,16 @@ nav ul li span:nth-child(4) {
 #signup-popup {
   display: none;
   position: fixed;
-  top: 50%;
-  left: 50%;
+  top: 10%;
+  left: 30%;
   transform: translate(-50%, -50%);
   padding: 20px;
-  background-color: #fff;
-  border: 1px solid #ccc;
+  background-color: rgb(222, 218, 218);
+  border: 1px solid  rgb(222, 218, 218);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   z-index: 1000;
   text-align: center;
   border-radius: 10px;
-  transition: box-shadow 0.5s ease-in-out;
-  animation: glow1 2s infinite alternate;
-}
-
-@keyframes glow1{
-  from{
-    box-shadow: 0 0 20px lightgreen;
-  }
-
-  to{
-    box-shadow: 0 0 50px lightgreen;
-  }
 }
 
 #signup-form {
@@ -240,25 +254,31 @@ nav ul li span:nth-child(4) {
 }
 
 #signup-form input {
-  width: 100%;
-  padding: 8px;
+  width: 500px;
+  padding: 10px;
   margin-bottom: 15px;
   box-sizing: border-box;
-  border-radius: 20px;
+  border-radius: 5px;
+  border: none;
 }
 #signup-form button {
-  background-color: #4caf50;
+  background-color: lightblue;
   color: white;
   padding: 10px 15px;
   border: none;
-  border-radius: 4px;
+  border-radius: 5px;
   cursor: pointer;
+  width:500px;
+  margin-top: 10px;
 }
 #signup-form button:hover {
-  background-color: #45a049;
+  background-color: rgb(36, 36, 239);
 }
 #signup-form p {
-  text-decoration: underline;
+  margin-top: 10px;
+  text-decoration: none;
+  cursor: pointer;
+  color: black;
 }
 /* ----- part second ----- */
 .leftright {
@@ -434,6 +454,9 @@ nav .fas {
     margin: 10px;
     font-size: 20px;
   }
+  nav ul li a {
+    font-size: 15px;
+  }
   nav ul .fas {
     position: absolute;
     top: 25px;
@@ -443,54 +466,24 @@ nav .fas {
   .sidemenu {
     position: relative;
     display: block;
-    margin: 10px;
-    font-size: 20px;
-  }
-  #shopnow {
-    margin-top: 25px;
-    font-size: 15px;
-    text-decoration: underline;
-    text-align: center;
-    position: relative;
+    margin-top: 1px;
+    font-size: 5px;
   }
   #shopnow,
   #services,
   #highlights,
   #faq {
-    margin-top: 25px;
-    font-size: 15px;
+    margin-top: 1px;
+    font-size: 17px;
     text-align: center;
     position: relative;
-  }
-  .dropdown {
-    position: relative;
-    display: inline-block;
-    width: 100%;
-  }
-  #dropdownMenuButton {
-    background-color: rgb(177, 174, 174);
-    position: relative;
-    width: 100%;
-  }
-  .dropdown-menu {
-    position: relative;
-    width: 100%;
-    display: none;
-    overflow-y: auto;
-    cursor: pointer;
-  }
-  #dropmenu {
-    background-color: rgb(228, 225, 225);
-  }
-  .dropdown-item {
-    width: 100%;
-    overflow: auto;
-    font-size: medium;
-    background-color: rgb(177, 174, 174);
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
   }
 }
 @media only screen and (max-width: 900px) {
-  .middle {
+  .search-bar {
     display: none;
   }
 }
