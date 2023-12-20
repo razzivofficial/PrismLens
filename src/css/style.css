@@ -454,6 +454,7 @@ nav .fas {
     padding-top: 50px;
     transition: right 0.5s;
     padding-left: 10px;
+    z-index: 500;
   }
   nav ul li {
     display: block;
@@ -1314,5 +1315,11 @@ p {
   .p-description {
     max-height: none; /* Remove max-height for scrollability on small screens */
   }
+}
+
+.emote-emote{
+  position: relative;
+  height: 200px;
+  width: 200px;
 }
 /* Add any additional styles for your button, image, etc. */
