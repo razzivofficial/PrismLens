@@ -1321,5 +1321,17 @@ p {
   position: relative;
   height: 200px;
   width: 200px;
+  filter: drop-shadow(0 0 5px rgb(211, 219, 5));
+  animation: glow3 2s infinite alternate;
+
+}
+
+@keyframes glow3{
+  0%{
+    filter: drop-shadow(0 0 5px rgb(211, 219, 5));
+  }
+  100%{
+    filter: drop-shadow(0 0 20px rgb(211, 219, 5));
+  }
 }
 /* Add any additional styles for your button, image, etc. */

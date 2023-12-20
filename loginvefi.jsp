@@ -8,13 +8,14 @@
 <html>
 <head>
     <meta charset="ISO-8859-1">
-    <title>Insert title here</title>
+    <title>Login Page</title>
 </head>
 <body>
     <%
         String email = request.getParameter("email");
         String password = request.getParameter("password");
         boolean loginSuccessful = false;
+        String errorMessage = "";
 
         try {
             Class.forName("oracle.jdbc.driver.OracleDriver");
@@ -27,7 +28,6 @@
             int veri = 0;
             while (rs.next()) {
                 veri = 1;
-
                 String pass = rs.getString("pass");
                 if (password.equals(pass)) {
                     System.out.println("in password check");
@@ -35,18 +35,25 @@
                     loginSuccessful = true;
                     response.sendRedirect("logined.html?loginSuccess=true"); // home page with login success parameter
                 } else {
-                    response.sendRedirect("aniket.html"); // error file
+                    errorMessage = "Invalid credentials. Please try again.";
                 }
             }
-            if (veri == 0)
-                response.sendRedirect("failed.html"); // error file
+            if (veri == 0) {
+                errorMessage = "Invalid credentials. Please try again.";
+            }
             rs.close();
             smt.close();
             con.close();
         } catch (Exception e) {
+            errorMessage = "An error occurred. Please try again.";
             out.println("failed try again!!"); // error page
             response.sendRedirect("index.html"); // index page
         }
     %>
+
+    <%-- Display error message if login fails --%>
+    <% if (!loginSuccessful) { %>
+        <div style="color: red;"><%= errorMessage %></div>
+    <% } %>
 </body>
 </html>
