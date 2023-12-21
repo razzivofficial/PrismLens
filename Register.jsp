@@ -16,9 +16,8 @@
     try {
         System.out.println(email);
         Class.forName("oracle.jdbc.driver.OracleDriver");
-        System.out.println("Before Established");
         Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "system", "admin");
-        System.out.println("Connection Established");
+
         
         String qry = "INSERT INTO prism(name, email, mobile, pass) VALUES('" + name + "','" + email + "','" + mobile + "','" + password + "')";
         session.setAttribute("name", name);

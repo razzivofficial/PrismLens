@@ -31,6 +31,7 @@
                 String pass = rs.getString("pass");
                 if (password.equals(pass)) {
                     System.out.println("in password check");
+                    // Store email in the session
                     session.setAttribute("email", email);
                     loginSuccessful = true;
                     response.sendRedirect("logined.html?loginSuccess=true"); // home page with login success parameter
