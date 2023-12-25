@@ -22,28 +22,29 @@
     <title>PrismLens</title>
 </head>
 <script>
-        // Get the query parameter from the URL
-        function getQueryVariable(variable) {
-            var query = window.location.search.substring(1);
-            var vars = query.split("&");
-            for (var i = 0; i < vars.length; i++) {
-                var pair = vars[i].split("=");
-                if (pair[0] == variable) {
-                    return pair[1];
-                }
+    // Get the query parameter from the URL
+    function getQueryVariable(variable) {
+        var query = window.location.search.substring(1);
+        var vars = query.split("&");
+        for (var i = 0; i < vars.length; i++) {
+            var pair = vars[i].split("=");
+            if (pair[0] == variable) {
+                return pair[1];
             }
-            return null;
         }
+        return null;
+    }
 
-        // Show alert if the "loginSuccess" parameter is present in the URL
-        var loginSuccess = getQueryVariable("loginSuccess");
-        if (loginSuccess === "true") {
-            alert("Login successful!");
-        }
-    </script>
+    // Show alert if the "loginSuccess" parameter is present in the URL
+    var loginSuccess = getQueryVariable("loginSuccess");
+    if (loginSuccess === "true") {
+        alert("Login successful!");
+    }
+</script>
+
 <body>
     <!-- ----- navbar started ----- -->
-    
+
     <div class="main-div">
         <!-- first part -->
         <div id="header" class="header">
@@ -194,7 +195,7 @@
                 </ul>
             </div>
             <div class="right">
-                <a href="http://127.0.0.1:5000/" ><button class="btn btn1" id="firstbtn">3D
+                <a href="http://127.0.0.1:5000/"><button class="btn btn1" id="firstbtn">3D
                         TRY</button></a>
                 <button class="btn btn2" id="secondbtn">BLU</button>
                 <button class="btn btn3" id="thirdbtn">GOLD</button>
@@ -325,7 +326,7 @@
             </div>
         </div>
 
-        
+
 
         <div class="middle-lower">
             <div class="ttttx">
@@ -623,23 +624,26 @@
             <!-- End Copyright Container -->
         </div>
 
-            <!-- Popup container -->
-    <div class="overlay" id="overlay"></div>
-    <div class="popup" id="popup">
-        
-        <!-- Close button -->
-        <div class="close-button-round-x">
-        <span class="close-button" onclick="closePopup()">&times;</span>
+        <!-- Popup container -->
+        <div class="overlay" id="overlay"></div>
+        <div class="popup" id="popup">
+
+            <!-- Close button -->
+            <div class="close-button-round-x">
+                <span class="close-button" onclick="closePopup()">&times;</span>
+            </div>
+            <!-- Popup content -->
+            <h3>Here is our product</h3>
+            <p class="p-discription">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellendus ut libero
+                eveniet natus quidem, itaque mollitia veritatis corporis, dolorem, facilis sint! Nemo, ducimus sed illum
+                totam amet nulla minima ratione ullam non necessitatibus error harum numquam maiores illo laudantium
+                soluta inventore odit dolore optio eligendi minus blanditiis, excepturi earum ad.
+            </p>
+            <button onclick="addToCart()" class="bttn-1" id="add-to-cart-left">Add to Cart</button>
+            <a href="Buypage.jsp"><button class="bttn-1" id="buy-button-right">Buy Now</button></a>
+
         </div>
-        <!-- Popup content -->
-        <h3>Here is our product</h3>
-        <p class="p-discription">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellendus ut libero eveniet natus quidem, itaque mollitia veritatis corporis, dolorem, facilis sint! Nemo, ducimus sed illum totam amet nulla minima ratione ullam non necessitatibus error harum numquam maiores illo laudantium soluta inventore odit dolore optio eligendi minus blanditiis, excepturi earum ad.
-        </p>
-        <button onclick="addToCart()" class="bttn-1" id="add-to-cart-left">Add to Cart</button>
-        <a href="Buypage.jsp" ><button class="bttn-1" id="buy-button-right">Buy Now</button></a>
- 
-    </div>
-    <!-- Pop up container End-->
+        <!-- Pop up container End-->
 
 
         <!-- End Copyright -->
@@ -670,4 +674,5 @@
 </body>
 
 </html>
+
 </html>
