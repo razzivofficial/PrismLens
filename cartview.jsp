@@ -23,50 +23,132 @@
 	
     <title>PrismLens</title>
     <style>
-        .cart-view-con-con{
+        .cart-view-uper-uper{
             display: flex;
-            justify-content: space-between;
-            border: solid 2px black;
-            width: 97%;
-            height: 80%;
-            margin: 20px;
-            padding: 20px;
-            border-radius: 8px;
+            flex-direction: row;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .cart-view-con-con{
+			border: solid 2px lightblue;
+            border-radius: 5px;
+            box-shadow: 5px 5px 10px lightblue;
+            height: 60%;
+            width: 45%;
+            margin-top: 40px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: center;
+            transition: transform 0.5s ease,box-shadow 0.5s ease,border-radius 0.5s ease;
+        }
+        .cart-view-con-con:hover{
+            transform: scale(1.05);
             box-shadow: 0 0 10px black;
+            border-radius: 15px;
         }
-        .cart-view-con-1{
-        	border: solid 2px black;
-        	padding: 10px;
-        	height: 400px;
-        	width: 500px;
-        	overflow: auto;
-        	margin-top:100px;
-        	margin-left: 400px;
-        	transition: box-shadow 0.5s ease-in-out;
-  			animation: glow4 2s infinite alternate;
-        	border-radius: 10px;
-        }
-        @keyframes glow4{
-  from{
-    box-shadow: 0 0 20px lightgreen;
-  }
-
-  to{
-    box-shadow: 0 0 50px lightgreen;
-  }
-}
         .image-cart-cart-cart{
 			height: 380px;
 			width: 400px;
         }
 		.desc-desc-desc3{
-			font-size: 20px;
-            color: black;
+			font-size: 25px;
+            color: rgb(0, 0, 0);
+            margin-left: 110px;
+            text-decoration: underline;
+            text-transform: uppercase;
 		}
-        #bttttttttttttttn-1{
-            position: absolute;
-            right: 240px;
+		.desc-desc-desc3-2{
+			font-size: 20px;
+            color: rgb(185, 17, 17);
+            margin-left: 80px;
+            font-weight: bolder;
+
+		}
+		.button-container {
+		    display: flex;
+		    justify-content: space-between; /* Adjust this property based on your layout preferences */
+            margin-left: -106px;
+		  }
+        .bttnx-3{
+        	padding: 5px;
+            margin-left: 88px;
+            background: rgb(25, 161, 210);
+            font-size: x-large;
+            border-radius: 3px;
+            transition: background 0.5s ease,border-radius 0.3s ease,box-shadow 0.5s ease;
         }
+        .bttnx-3:hover{
+            cursor: pointer;
+            border-radius: 20px;
+
+            background: linear-gradient(
+                rgb(145, 232, 232),
+                rgb(25, 161, 210),
+                rgb(25, 161, 210),
+                rgb(145, 232, 232)
+            );
+            box-shadow: 0 0 10px black;
+        }
+        @media screen and (max-width: 768px) {
+        .cart-view-con-con {
+            width: 100%; /* Adjust based on your needs */
+        }
+
+        .desc-desc-desc3,
+        .desc-desc-desc3-2,
+        .bttnx-3
+        {
+            margin-left: 0;
+            text-align: center;
+        }
+
+        .button-container {
+        margin-left: 0; /* Remove the left margin on smaller screens */
+    }
+    }
+    
+    
+    .hello-hello-hello-hello{
+        	margin-top: 30px;
+            color: black;
+            font-size: xx-large;
+        }
+        .head-xx-xx11-11{
+        	margin-top: 50px;
+	        height: 50%;
+	        width: 50%;
+            align-items: center;
+            margin-left:570px;
+        }
+        .head1-xx-xx11-11{
+        	height: 100px;
+	        width: 400px;
+	        border-radius: 50%;
+	        background-image: linear-gradient(rgb(209, 203, 203), rgb(78, 78, 73),rgb(63, 68, 63),rgb(211, 211, 230),rgb(52, 48, 49));
+	        padding: 0px;
+        }
+        .hellheleolehe{
+        	height: 100px;
+	        width: 400px;
+	        border-radius: 10px;
+	        background-color: rgb(36, 125, 204);
+	        box-shadow: inset 0 0 30px rgb(0, 0, 0);
+	        font-size: 20px;
+	        box-shadow: 5px 5px 10px rgb(80, 157, 196);
+            transition: transform 0.7s ease,box-shadow 0.7s ease;
+            text-decoration: underline;
+            color: black;
+	        
+        }
+        .hellheleolehe:hover{
+        	transform: scale(1.01);
+            box-shadow: 0 0 30px black;
+        }
+        @media only screen and (max-width: 768px) {
+    .head-xx-xx11-11 {
+        margin-left: 0; /* Adjusted margin for responsiveness */
+    }
+}
     </style>
 
 </head>
@@ -205,6 +287,29 @@
             </nav>
         </div>
     </div>
+    
+    
+    <div id="leftright" class="leftright">
+        <div class="left">
+            <ul>
+                <li><a href="#">EYE GLASSES</a></li>
+                <li><a href="#">COMPUTER GLASSES</a></li>
+                <li><a href="#">KIDS GLASSES</a></li>
+                <li><a href="#">CONTACT LENSES</a></li>
+                <li><a href="#">SUN GLASSES</a></li>
+                <li><a href="#">HOME EYE-TEST</a></li>
+                <li><a href="#">STORE LOCATOR</a></li>
+            </ul>
+        </div>
+        <div class="right">
+            <a href="http://127.0.0.1:5000/" ><button class="btn btn1" id="firstbtn">3D
+                    TRY</button></a>
+            <button class="btn btn2" id="secondbtn">BLU</button>
+            <button class="btn btn3" id="thirdbtn">GOLD</button>
+        </div>
+    </div>
+
+<div class='cart-view-uper-uper'>
 
 <%
 // Database connection parameters for cart
@@ -232,7 +337,9 @@ try {
     if (userEmail != null && !userEmail.isEmpty()) {
         cartPreparedStatement.setString(1, userEmail);
         cartResultSet = cartPreparedStatement.executeQuery();
-
+		
+        
+        boolean cartIsEmpty = true;
         // Display cart items
         while (cartResultSet.next()) {
             String productDescription = cartResultSet.getString("product_description");
@@ -243,26 +350,53 @@ try {
             out.println("<div class='cart-view-con-con'>");
             out.println("<div class='cart-view-con'>");
             out.println("<img src='" + productImageLink + "' alt='Product Image' class='image-cart-cart-cart'>");
-            out.println("<p class='desc-desc-desc3'>Description: " + productDescription + "</p>");
-            out.println("<p class='desc-desc-desc3'>Price: RS:-" + productPrice + "</p>");
-			out.println("</div>");
+            out.println("<p class='desc-desc-desc3'>" + productDescription + "</p>");
+            out.println("<p class='desc-desc-desc3-2'>Price: RS:-" + productPrice + "</p>");
+			
             // Button for placing order for individual product
-            out.println("<div class='cart-view-con-1'>");
-            out.println("<p class='desc-desc-desc3'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur provident nostrum cupiditate, autem beatae ullam ipsam doloribus, magnam quia, alias porro quas dolor accusamus eveniet! Et odio commodi vero voluptatibus aut quibusdam maiores velit?</p>");
-            out.println("</div>");
+            
+            out.println("<div class='button-container'>");
             out.println("<form action='placeOrder.jsp' method='post'>");
             out.println("<input type='hidden' name='productDescription' value='" + productDescription + "'>");
             out.println("<input type='hidden' name='productPrice' value='" + productPrice + "'>");
             out.println("<input type='hidden' name='productImageLink' value='" + productImageLink + "'>");
-            out.println("<input class='bttn-1' id = 'bttttttttttttttn-1' type='submit' value='Place Order'>");
+            out.println("<input class='bttnx-3' type='submit' value='Place Order'>");
+            out.println("</form>");
+
+
+
+            out.println("<form action='deleteCartItem.jsp' method='post'>");
+            out.println("<input type='hidden' name='productDescription' value='" + productDescription + "'>");
+            out.println("<input type='hidden' name='productPrice' value='" + productPrice + "'>");
+            out.println("<input type='hidden' name='productImageLink' value='" + productImageLink + "'>");
+            out.println("<input class='bttn-2' type='submit' value='Remove Cart'>");
             out.println("</form>");
             out.println("</div>");
             
+            out.println("</div>");
+            out.println("</div>");
+            
+            cartIsEmpty = false;
         }
+        
+        if (cartIsEmpty) {
+        	out.println("<u><p class='hello-hello-hello-hello'>Your cart is empty!</p></u>");
+            out.println("<div class='head-xx-xx11-11'>");
+            out.println("<div class='head1-xx-xx11-11'>");
+            out.println("<a href='logined.html'><button class='hellheleolehe'>Go to Home</button></a>");
+            out.println("</div>");
+            out.println("</div>");
+        } else {
+            // Display a message if the user is not logged in
+            out.println("<p>User not logged in. Please log in to view the cart.</p>");
+        }
+        
     } else {
         // Display a message if the user is not logged in
         out.println("<p>User not logged in. Please log in to view the cart.</p>");
     }
+    
+
 
 } catch (Exception e) {
     e.printStackTrace();
@@ -277,6 +411,6 @@ try {
     }
 }
 %>
-
+</div>
 </body>
 </html>

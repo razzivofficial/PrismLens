@@ -21,11 +21,6 @@
 
     <title>PrismLens</title>
     <style>
-    	/* .product-container-top-top{
-    		display: flex;
-            flex-direction: row;
-            justify-content: space-evenly;
-    	} */
     	.product-container-top-top-top{
     		display: flex;
     		flex-direction: row;
@@ -34,28 +29,27 @@
     		justify-content: space-between;
     	}
         .product-container {
-        	
-            border: 1px solid #ccc;
-            padding: 10px;
-            margin: 30px;
-            width: 200px;
-            float: left;
-            border-radius: 5px;
-            transition: box-shadow 0.5s ease;
-            margin-bottom:20px;
-            height: 261px;
-            
-        }
-		.product-container:hover{
-			box-shadow: 0 0 10px black;
-			border-radius: 10px;
+		    border: 2px solid #ccc;
+		    padding: 10px;
+		    margin: 30px;
+		    width: 200px;
+		    float: left;
+		    border-radius: 5px;
+		    transition: box-shadow 0.7s ease, border-radius 0.7s ease,transform 0.7s ease;
+		    margin-bottom: 20px;
+		    height: 261px;
+		    box-shadow: 5px 5px 8px lightblue;
 		}
+
+		.product-container:hover {
+		    box-shadow: 0 0 10px black;
+		    border-radius: 10px;
+		    transform: scale(1.05);
+		}
+
         .product-container img {
             max-width: 100%;
             height:90px;
-        }
-        .product-container p{
-        	color: black;
         }
         #xxee313{
         	padding: 5px;
@@ -78,6 +72,35 @@
             );
             box-shadow: 0 0 10px black;
         }
+        .desc-desc-desc-3{
+        	color: black;
+            font-weight: bold;
+            margin-top: 4px;
+        }
+        .desc-desc-desc-4{
+        	color: rgb(147, 12, 12);
+        	margin-top: -6px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-weight: bold;
+        	
+        }
+
+        @media only screen and (max-width: 480px) {
+            .product-container-top-top-top {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+            .product-container {
+                width: 100%;
+                margin: 15px 0px;
+                align-items: center;
+            }
+
+            #xxee313 {
+                margin-left: 0;
+            }
+}
     </style>
 </head>
 <body>
@@ -216,6 +239,26 @@
         </div>
     </div>
 
+    <div id="leftright" class="leftright">
+        <div class="left">
+            <ul>
+                <li><a href="#">EYE GLASSES</a></li>
+                <li><a href="#">COMPUTER GLASSES</a></li>
+                <li><a href="#">KIDS GLASSES</a></li>
+                <li><a href="#">CONTACT LENSES</a></li>
+                <li><a href="#">SUN GLASSES</a></li>
+                <li><a href="#">HOME EYE-TEST</a></li>
+                <li><a href="#">STORE LOCATOR</a></li>
+            </ul>
+        </div>
+        <div class="right">
+            <a href="http://127.0.0.1:5000/" ><button class="btn btn1" id="firstbtn">3D
+                    TRY</button></a>
+            <button class="btn btn2" id="secondbtn">BLU</button>
+            <button class="btn btn3" id="thirdbtn">GOLD</button>
+        </div>
+    </div>
+
 
 <div class='product-container-top-top-top'>
 
@@ -261,8 +304,8 @@
 
 		    out.println("<div class='product-container'>");
 		    out.println("<img src='" + imageLink + "' alt='Product Image'>");
-		    out.println("<p>" + description + "</p>");
-		    out.println("<p>Rs:-" + price + "</p>");
+		    out.println("<p class='desc-desc-desc-3'>" + description + "</p>");
+		    out.println("<p class='desc-desc-desc-4'>Rs:-" + price + "</p>");
 
 		    // Add an "Add to Cart" button for each product
 		    out.println("<form action='cart.jsp' method='post'>");
