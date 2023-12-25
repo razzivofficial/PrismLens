@@ -20,6 +20,54 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <title>PrismLens</title>
+
+    <style>
+        .hello-xx-x1{
+            text-align: center;
+            align-items: center;
+        }
+        .hello-hello-hello-hello{
+        	margin-top: 30px;
+            color: black;
+            font-size: xx-large;
+        }
+        .head-xx-xx11-11{
+        	margin-top: 50px;
+	        height: 50%;
+	        width: 50%;
+            align-items: center;
+            margin-left:505px;
+        }
+        .head1-xx-xx11-11{
+        	height: 100px;
+	        width: 400px;
+	        border-radius: 50%;
+	        background-image: linear-gradient(rgb(209, 203, 203), rgb(78, 78, 73),rgb(63, 68, 63),rgb(211, 211, 230),rgb(52, 48, 49));
+	        padding: 0px;
+        }
+        .hellheleolehe{
+        	height: 100px;
+	        width: 400px;
+	        border-radius: 10px;
+	        background-color: rgb(36, 125, 204);
+	        box-shadow: inset 0 0 30px rgb(0, 0, 0);
+	        font-size: 20px;
+	        box-shadow: 5px 5px 10px rgb(80, 157, 196);
+            transition: transform 0.7s ease,box-shadow 0.7s ease;
+            text-decoration: underline;
+            color: black;
+	        
+        }
+        .hellheleolehe:hover{
+        	transform: scale(1.01);
+            box-shadow: 0 0 30px black;
+        }
+        @media only screen and (max-width: 768px) {
+    .head-xx-xx11-11 {
+        margin-left: 0; /* Adjusted margin for responsiveness */
+    }
+}
+    </style>
 </head>
 <body>
 
@@ -158,6 +206,27 @@
         </div>
     </div>
 
+    <div id="leftright" class="leftright">
+        <div class="left">
+            <ul>
+                <li><a href="#">EYE GLASSES</a></li>
+                <li><a href="#">COMPUTER GLASSES</a></li>
+                <li><a href="#">KIDS GLASSES</a></li>
+                <li><a href="#">CONTACT LENSES</a></li>
+                <li><a href="#">SUN GLASSES</a></li>
+                <li><a href="#">HOME EYE-TEST</a></li>
+                <li><a href="#">STORE LOCATOR</a></li>
+            </ul>
+        </div>
+        <div class="right">
+            <a href="http://127.0.0.1:5000/" ><button class="btn btn1" id="firstbtn">3D
+                    TRY</button></a>
+            <button class="btn btn2" id="secondbtn">BLU</button>
+            <button class="btn btn3" id="thirdbtn">GOLD</button>
+        </div>
+    </div>
+
+<div class="hello-xx-x1">
 <%
 // Database connection parameters for cart
 String cartJdbcUrl = "jdbc:oracle:thin:@localhost:1521:xe";
@@ -198,9 +267,14 @@ try {
         int rowsAffected = cartStatement.executeUpdate();
 
         if (rowsAffected > 0) {
-            out.println("<p>Successfully added to cart!</p>");
+            out.println("<u><p class='hello-hello-hello-hello'>Successfully added to cart!</p></u>");
+            out.println("<div class='head-xx-xx11-11'>");
+            out.println("<div class='head1-xx-xx11-11'>");
+            out.println("<a href='cartview.jsp'><button class='hellheleolehe'>Go to Cart</button></a>");
+            out.println("</div>");
+            out.println("</div>");
         } else {
-            out.println("<p>Failed to add to cart. Please try again.</p>");
+            out.println("<p class='hello-hello-hello-hello'>Failed to add to cart. Please try again.</p>");
         }
     }
 
@@ -216,6 +290,6 @@ try {
     }
 }
 %>
-
+</div>
 </body>
 </html>
