@@ -13,7 +13,7 @@ function toggleAgree() {
     button.innerText = "I'm ready";
   }
   if (currentSlide == 0) {
-    window.location.href = "next page.html";
+    window.location.href = "the-section-test.html";
   }
   showSlide();
 }
