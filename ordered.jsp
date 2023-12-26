@@ -1,6 +1,9 @@
 <%@ page import="java.sql.*" %>
-<%@ page contentType="text/html;charset=UTF-8" %>
-<html>
+<%@ page import="java.io.*" %>
+<%@ page import="java.text.SimpleDateFormat" %>
+
+<html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -20,59 +23,81 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <title>PrismLens</title>
-
     <style>
-        .hello-xx-x1{
-            text-align: center;
-            align-items: center;
-        }
-        .hello-hello-hello-hello{
-        	margin-top: 30px;
-            color: black;
-            font-size: xx-large;
-            margin-left: -114px;
-        }
-        .head-xx-xx11-11{
-        	margin-top: 50px;
-	        height: 50%;
-	        width: 50%;
-            align-items: center;
-            margin-left:505px;
-        }
-        .head1-xx-xx11-11{
-        	height: 100px;
-	        width: 400px;
-	        border-radius: 50%;
-	        background-image: linear-gradient(rgb(209, 203, 203), rgb(78, 78, 73),rgb(63, 68, 63),rgb(211, 211, 230),rgb(52, 48, 49));
-	        padding: 0px;
-        }
-        .hellheleolehe{
-        	height: 100px;
-	        width: 400px;
-	        border-radius: 10px;
-	        background-color: rgb(36, 125, 204);
-	        box-shadow: inset 0 0 30px rgb(0, 0, 0);
-	        font-size: 20px;
-	        box-shadow: 5px 5px 10px rgb(80, 157, 196);
-            transition: transform 0.7s ease,box-shadow 0.7s ease;
-            text-decoration: underline;
-            color: black;
-	        
-        }
-        .hellheleolehe:hover{
-        	transform: scale(1.01);
-            box-shadow: 0 0 30px black;
-        }
-        @media only screen and (max-width: 768px) {
-    .head-xx-xx11-11 {
-        margin-left: 0; /* Adjusted margin for responsiveness */
-    }
-}
+    
+    	.order-container-top-top-top{
+    		margin-top: 20px;
+    		display: flex;
+    		flex-direction: row;
+    		flex-wrap: wrap;
+    		justify-content: space-around;
+    	}
+    	.order-container-top{
+    		border: solid 2px #ccc;
+    		width: 250px;
+    		height: 300px;
+    		border-radius: 5px;
+    		margin: 10px;
+    		margin-top: 20px;
+    		padding: 10px;
+    		padding-left: 15px;
+    		box-shadow: inset 0 0 5px rgb(127, 226, 114);
+    		transition: box-shadow 0.2s ease, border-radius 0.3s ease,transform 0.3s ease;
+    	}
+    	.order-container-top:hover {
+		    box-shadow: 0 0 10px lightgreen;
+		    border-radius: 10px;
+		    transform: scale(1.05);
+		}
+    	.order-container-top img{
+    	 max-width: 200px;
+    	 height: 90px;
+    	}
+    	#order-price-xx-eef{
+    	color: red;
+        font-weight: bolder;
+    	}
+    	#order-price-xx-eeff{
+    	color: blue;
+        font-weight: bolder;
+    	}
+    	#order-price-xx-eefff{
+    	color: black;
+        font-weight: bolder;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        
+    	}
+    	.order-container-top p{
+    		color: black;
+    		text: bold;
+    	}
+    	
+        
     </style>
 </head>
+<script>
+        // Get the query parameter from the URL
+        function getQueryVariable(variable) {
+            var query = window.location.search.substring(1);
+            var vars = query.split("&");
+            for (var i = 0; i < vars.length; i++) {
+                var pair = vars[i].split("=");
+                if (pair[0] == variable) {
+                    return pair[1];
+                }
+            }
+            return null;
+        }
+
+        // Show alert if the "loginSuccess" parameter is present in the URL
+        var loginSuccess = getQueryVariable("loginSuccess");
+        if (loginSuccess === "true") {
+            alert("Login successful!");
+        }
+    </script>
 <body>
-
-
+    <!-- ----- navbar started ----- -->
+    
     <div class="main-div">
         <!-- first part -->
         <div id="header" class="header">
@@ -230,70 +255,74 @@
             </div>
         </div>
 
-<div class="hello-xx-x1">
-<%
-// Database connection parameters for cart
-String cartJdbcUrl = "jdbc:oracle:thin:@localhost:1521:xe";
-String cartUsername = "system";
-String cartPassword = "admin";
+<div class='order-container-top-top-top'>
 
-// JDBC connections for cart
-Connection cartConnection = null;
-PreparedStatement cartStatement = null;
+<%
+// Database connection parameters for orders
+String ordersJdbcUrl = "jdbc:oracle:thin:@localhost:1521:xe";
+String ordersUsername = "system";
+String ordersPassword = "admin";
+
+// JDBC connections for orders
+Connection ordersConnection = null;
+PreparedStatement ordersPreparedStatement = null;
+ResultSet ordersResultSet = null;
 
 try {
-    // Load the JDBC driver for cart
+    // Load the JDBC driver for orders
     Class.forName("oracle.jdbc.driver.OracleDriver");
 
-    // Establish the connection for cart
-    cartConnection = DriverManager.getConnection(cartJdbcUrl, cartUsername, cartPassword);
+    // Establish the connection for orders
+    ordersConnection = DriverManager.getConnection(ordersJdbcUrl, ordersUsername, ordersPassword);
 
-    // Prepare a statement for inserting data into the cart table
-    String insertQuery = "INSERT INTO cart (email, product_description, product_price, product_image_link) VALUES (?, ?, ?, ?)";
-    cartStatement = cartConnection.prepareStatement(insertQuery);
+    // Fetch all orders from the orders table
+    String selectOrdersQuery = "SELECT * FROM orders";
+    ordersPreparedStatement = ordersConnection.prepareStatement(selectOrdersQuery);
+    ordersResultSet = ordersPreparedStatement.executeQuery();
 
-    // Retrieve user email and product details from session
-    String userEmail = (String) session.getAttribute("email"); // Use "email" as the attribute name
-    if (userEmail == null || userEmail.isEmpty()) {
-        out.println("<p>User email not found in session. Please login and try again.</p>");
-    } else {
-        String productDescription = request.getParameter("productDescription");
-        double productPrice = Double.parseDouble(request.getParameter("productPrice"));
-        String productImageLink = request.getParameter("productImageLink");
+    // Display orders
 
-        // Set values for the cart statement
-        cartStatement.setString(1, userEmail);
-        cartStatement.setString(2, productDescription);
-        cartStatement.setDouble(3, productPrice);
-        cartStatement.setString(4, productImageLink);
-
-        // Execute the insert query
-        int rowsAffected = cartStatement.executeUpdate();
-
-        if (rowsAffected > 0) {
-            out.println("<u><p class='hello-hello-hello-hello'>Successfully added to cart!</p></u>");
-            out.println("<div class='head-xx-xx11-11'>");
-            out.println("<div class='head1-xx-xx11-11'>");
-            out.println("<a href='cartview.jsp'><button class='hellheleolehe'>Go to Cart</button></a>");
-            out.println("</div>");
-            out.println("</div>");
-        } else {
-            out.println("<p class='hello-hello-hello-hello'>Failed to add to cart. Please try again.</p>");
-        }
+    while (ordersResultSet.next()) {
+        String userEmail = ordersResultSet.getString("user_email");
+        String orderDescription = ordersResultSet.getString("product_description");
+        double orderPrice = ordersResultSet.getDouble("product_price");
+        String orderImageLink = ordersResultSet.getString("product_image_link");
+        Timestamp orderTimestamp = ordersResultSet.getTimestamp("order_timestamp");
+	
+        
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        SimpleDateFormat timeFormat = new SimpleDateFormat("hh:mm a");
+        
+        String formattedDate = dateFormat.format(orderTimestamp);
+        String formattedTime = timeFormat.format(orderTimestamp);
+        // Display order details in a container with image
+        out.println("<div class='order-container-top-top'>");
+        out.println("<div class='order-container-top'>");
+        out.println("<img src='" + orderImageLink + "' alt='Product Image' class='order-image'>");
+        out.println("<p>Product: " + orderDescription + "</p>");
+        out.println("<p id='order-price-xx-eef'>Price: " + orderPrice + "</p>");
+        out.println("<p id='order-price-xx-eeff'>Date: " + formattedDate + "</p>");
+        out.println("<p id='order-price-xx-eefff'>Time: " + formattedTime + "</p>");
+        out.println("</div>");
+        out.println("</div>");
     }
+
 
 } catch (Exception e) {
     e.printStackTrace();
 } finally {
-    // Close the resources for cart
+    // Close the resources for orders
     try {
-        if (cartStatement != null) cartStatement.close();
-        if (cartConnection != null) cartConnection.close();
+        if (ordersResultSet != null) ordersResultSet.close();
+        if (ordersPreparedStatement != null) ordersPreparedStatement.close();
+        if (ordersConnection != null) ordersConnection.close();
     } catch (SQLException e) {
         e.printStackTrace();
     }
 }
 %>
+
 </div>
 </body>
+
 </html>

@@ -1,12 +1,17 @@
 <%@ page import="java.sql.*" %>
-<%@ page contentType="text/html;charset=UTF-8" %>
-<html>
+<%@ page import="java.io.*" %>
+
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="./resources/Logo/favicon-32x32.png" />
     <!-- styesheet css -->
+    <link rel="stylesheet" href="./src/css/style.css" />
     <link rel="stylesheet" href="./src/css/style.css" />
     <!-- font awesome -->
     <script src="https://kit.fontawesome.com/ddac256733.js" crossorigin="anonymous"></script>
@@ -19,61 +24,104 @@
     <link rel="stylesheet" href="src/css/chat.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+	
     <title>PrismLens</title>
-
     <style>
-        .hello-xx-x1{
-            text-align: center;
+        .main-main-body-body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #fff; /* White background color */
+            display: flex;
             align-items: center;
+            justify-content: center;
+            height: 80vh;
+            overflow: hidden; /* Hide overflow to prevent scrolling */
         }
-        .hello-hello-hello-hello{
-        	margin-top: 30px;
-            color: black;
-            font-size: xx-large;
-            margin-left: -114px;
+
+        .coins-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none; /* Allow clicking through the coin container */
         }
-        .head-xx-xx11-11{
-        	margin-top: 50px;
-	        height: 50%;
-	        width: 50%;
-            align-items: center;
-            margin-left:505px;
+
+        .coin {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: #ffd700; /* Coin color (gold) */
+            border-radius: 50%;
+            animation: coinFall 2s linear infinite;
         }
-        .head1-xx-xx11-11{
-        	height: 100px;
-	        width: 400px;
-	        border-radius: 50%;
-	        background-image: linear-gradient(rgb(209, 203, 203), rgb(78, 78, 73),rgb(63, 68, 63),rgb(211, 211, 230),rgb(52, 48, 49));
-	        padding: 0px;
+
+        /* Define the coin animation */
+        @keyframes coinFall {
+            0% {
+                transform: translateY(-100vh);
+            }
+            100% {
+                transform: translateY(100vh);
+            }
         }
-        .hellheleolehe{
-        	height: 100px;
-	        width: 400px;
-	        border-radius: 10px;
-	        background-color: rgb(36, 125, 204);
-	        box-shadow: inset 0 0 30px rgb(0, 0, 0);
-	        font-size: 20px;
-	        box-shadow: 5px 5px 10px rgb(80, 157, 196);
-            transition: transform 0.7s ease,box-shadow 0.7s ease;
-            text-decoration: underline;
-            color: black;
-	        
+
+        .confirmation-container {
+		    position: relative;
+		    width: 300px;
+		    height: 300px;
+		    background-color: #3498db; /* Blue container background color */
+		    border-radius: 50%;
+		    display: flex;
+		    align-items: center;
+		    justify-content: center;
+		    flex-direction: column;
+		    text-align: center;
+		    color: #fff; /* White text color */
+		    overflow: hidden; /* Hide overflow within the container */
+		    animation: scaleAnimation 3s infinite alternate;
+		}
+		
+		@keyframes scaleAnimation {
+		    from {
+		        transform: scale(1);
+		        box-shadow: 0 0 5px green;
+		    }
+		    
+		    to {
+		        transform: scale(1.4);
+		        box-shadow: 0 0 20px green;
+		    }
+		}
+		
+        .tick-symbol {
+            font-size: 50px;
+            margin-bottom: 20px;
         }
-        .hellheleolehe:hover{
-        	transform: scale(1.01);
-            box-shadow: 0 0 30px black;
+
+        .plced-plced-djehdjd{
+            margin: 0;
         }
-        @media only screen and (max-width: 768px) {
-    .head-xx-xx11-11 {
-        margin-left: 0; /* Adjusted margin for responsiveness */
-    }
-}
+
+        .dhdhjdhfdlfjdjlfljdo{
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #3498db; /* Blue button color */
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .dhdhjdhfdlfjdjlfljdo:hover {
+            background-color: #2980b9; /* Darker blue on hover */
+        }
     </style>
 </head>
 <body>
 
-
-    <div class="main-div">
+<div class="main-div">
         <!-- first part -->
         <div id="header" class="header">
             <div class="start">
@@ -209,91 +257,116 @@
             </div>
         </div>
 
-        <!-- second part -->
-        <div id="leftright" class="leftright">
-            <div class="left">
-                <ul>
-                    <li><a href="#">EYE GLASSES</a></li>
-                    <li><a href="#">COMPUTER GLASSES</a></li>
-                    <li><a href="#">KIDS GLASSES</a></li>
-                    <li><a href="#">CONTACT LENSES</a></li>
-                    <li><a href="#">SUN GLASSES</a></li>
-                    <li><a href="#">HOME EYE-TEST</a></li>
-                    <li><a href="#">STORE LOCATOR</a></li>
-                </ul>
-            </div>
-            <div class="right">
-                <a href="http://127.0.0.1:5000/" ><button class="btn btn1" id="firstbtn">3D
-                        TRY</button></a>
-                <button class="btn btn2" id="secondbtn">BLU</button>
-                <button class="btn btn3" id="thirdbtn">GOLD</button>
-            </div>
+	<div id="leftright" class="leftright">
+        <div class="left">
+            <ul>
+                <li><a href="#">EYE GLASSES</a></li>
+                <li><a href="#">COMPUTER GLASSES</a></li>
+                <li><a href="#">KIDS GLASSES</a></li>
+                <li><a href="#">CONTACT LENSES</a></li>
+                <li><a href="#">SUN GLASSES</a></li>
+                <li><a href="#">HOME EYE-TEST</a></li>
+                <li><a href="#">STORE LOCATOR</a></li>
+            </ul>
         </div>
+        <div class="right">
+            <a href="http://127.0.0.1:5000/" ><button class="btn btn1" id="firstbtn">3D
+                    TRY</button></a>
+            <button class="btn btn2" id="secondbtn">BLU</button>
+            <button class="btn btn3" id="thirdbtn">GOLD</button>
+        </div>
+    </div>
 
-<div class="hello-xx-x1">
+<div class='main-main-body-body'>
+    <div class="coins-container">
+        <!-- Add multiple coins by duplicating these lines -->
+        <div class="coin" style="left: 10%;"></div>
+        <div class="coin" style="left: 20%;"></div>
+        <div class="coin" style="left: 30%;"></div>
+        <div class="coin" style="left: 50%;"></div>
+        <div class="coin" style="left: 80%;"></div>
+        <div class="coin" style="left: 30%;"></div>
+        <div class="coin" style="left: 65%;"></div>
+        <div class="coin" style="left: 15%;"></div>
+        <div class="coin" style="left: 25%;"></div>
+        <div class="coin" style="left: 25%;"></div>
+        <div class="coin" style="left: 95%;"></div>
+        <div class="coin" style="left: 85%;"></div>
+        <div class="coin" style="left: 75%;"></div>
+        <div class="coin" style="left: 70%;"></div>
+        <!-- Add more coins as needed -->
+    </div>
+
+    <div class="confirmation-container">
+        <div class="tick-symbol">&#10004;</div>
+        <p class='plced-plced-djehdjd'>Order Placed Successfully</p>
+        <a href='logined.html' class='dhdhjdhfdlfjdjlfljdo'>Go to Home</a>
+    </div>
+</body>
+</html>
+</div>
+
 <%
+// Database connection parameters for orders
+String ordersJdbcUrl = "jdbc:oracle:thin:@localhost:1521:xe";
+String ordersUsername = "system";
+String ordersPassword = "admin";
+
 // Database connection parameters for cart
 String cartJdbcUrl = "jdbc:oracle:thin:@localhost:1521:xe";
 String cartUsername = "system";
 String cartPassword = "admin";
 
+// JDBC connections for orders
+Connection ordersConnection = null;
+PreparedStatement ordersPreparedStatement = null;
+
 // JDBC connections for cart
 Connection cartConnection = null;
-PreparedStatement cartStatement = null;
+PreparedStatement cartPreparedStatement = null;
 
 try {
-    // Load the JDBC driver for cart
+    // Load the JDBC driver for orders
     Class.forName("oracle.jdbc.driver.OracleDriver");
 
-    // Establish the connection for cart
+    // Establish the connection for orders
+    ordersConnection = DriverManager.getConnection(ordersJdbcUrl, ordersUsername, ordersPassword);
+
+    // Retrieve parameters from the request
+    String productDescription = request.getParameter("productDescription");
+    double productPrice = Double.parseDouble(request.getParameter("productPrice"));
+    String productImageLink = request.getParameter("productImageLink");
+    String userEmail = (String) session.getAttribute("email");
+
+    // Insert order into the orders table with order placement time
+    String insertOrderQuery = "INSERT INTO orders (user_email, product_description, product_price, product_image_link, order_timestamp) VALUES (?, ?, ?, ?, CURRENT_TIMESTAMP)";
+    ordersPreparedStatement = ordersConnection.prepareStatement(insertOrderQuery);
+    ordersPreparedStatement.setString(1, userEmail);
+    ordersPreparedStatement.setString(2, productDescription);
+    ordersPreparedStatement.setDouble(3, productPrice);
+    ordersPreparedStatement.setString(4, productImageLink);
+    ordersPreparedStatement.executeUpdate();
+
+    // Now, remove the item from the cart
     cartConnection = DriverManager.getConnection(cartJdbcUrl, cartUsername, cartPassword);
-
-    // Prepare a statement for inserting data into the cart table
-    String insertQuery = "INSERT INTO cart (email, product_description, product_price, product_image_link) VALUES (?, ?, ?, ?)";
-    cartStatement = cartConnection.prepareStatement(insertQuery);
-
-    // Retrieve user email and product details from session
-    String userEmail = (String) session.getAttribute("email"); // Use "email" as the attribute name
-    if (userEmail == null || userEmail.isEmpty()) {
-        out.println("<p>User email not found in session. Please login and try again.</p>");
-    } else {
-        String productDescription = request.getParameter("productDescription");
-        double productPrice = Double.parseDouble(request.getParameter("productPrice"));
-        String productImageLink = request.getParameter("productImageLink");
-
-        // Set values for the cart statement
-        cartStatement.setString(1, userEmail);
-        cartStatement.setString(2, productDescription);
-        cartStatement.setDouble(3, productPrice);
-        cartStatement.setString(4, productImageLink);
-
-        // Execute the insert query
-        int rowsAffected = cartStatement.executeUpdate();
-
-        if (rowsAffected > 0) {
-            out.println("<u><p class='hello-hello-hello-hello'>Successfully added to cart!</p></u>");
-            out.println("<div class='head-xx-xx11-11'>");
-            out.println("<div class='head1-xx-xx11-11'>");
-            out.println("<a href='cartview.jsp'><button class='hellheleolehe'>Go to Cart</button></a>");
-            out.println("</div>");
-            out.println("</div>");
-        } else {
-            out.println("<p class='hello-hello-hello-hello'>Failed to add to cart. Please try again.</p>");
-        }
-    }
+    String deleteCartItemQuery = "DELETE FROM cart WHERE email = ? AND product_description = ?";
+    cartPreparedStatement = cartConnection.prepareStatement(deleteCartItemQuery);
+    cartPreparedStatement.setString(1, userEmail);
+    cartPreparedStatement.setString(2, productDescription);
+    cartPreparedStatement.executeUpdate();
 
 } catch (Exception e) {
     e.printStackTrace();
 } finally {
-    // Close the resources for cart
+    // Close the resources for orders and cart
     try {
-        if (cartStatement != null) cartStatement.close();
+        if (ordersPreparedStatement != null) ordersPreparedStatement.close();
+        if (ordersConnection != null) ordersConnection.close();
+        if (cartPreparedStatement != null) cartPreparedStatement.close();
         if (cartConnection != null) cartConnection.close();
     } catch (SQLException e) {
         e.printStackTrace();
     }
 }
 %>
-</div>
-</body>
-</html>
+
