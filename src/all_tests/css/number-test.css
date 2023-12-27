@@ -31,6 +31,7 @@ width: 300px;
 
 #input, #show {
 display: none;
+border-radius: 5px;
 }
 #input{
     margin-left: 6%;
@@ -39,7 +40,7 @@ display: none;
 #answer {
 position: absolute;
 top: 28%;
-right: 0px;
+right: 100px;
 padding: 15px;
 border: 2px dotted grey;
 width: 300px;
@@ -48,7 +49,7 @@ border-top-left-radius: 10px;
 border-bottom-left-radius: 10px;
 }
 
-#answer:hover {
+/* #answer:hover {
 background-color: #cccccc;
 border: 2px solid #cccccc;
 }
@@ -59,4 +60,4 @@ background-color: #aaffaa;
 
 .wrong {
 background-color: #ffaaaa;
-}
+} */
