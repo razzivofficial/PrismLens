@@ -74,7 +74,7 @@
         height: 100%;
         object-fit: cover;
       }
-      .temp-result {
+      #tempresult {
         display: none;
       }
       #score {
@@ -137,10 +137,66 @@
       .button-73:active {
         transform: scale(1.025);
       }
+
+      .result{
+        display: none;
+        background-color:rgb(184, 181, 181);
+        position: relative;
+        overflow:hidden;
+        width : 30%;
+        left: 35%;
+        border-radius: 50px;
+        margin-top: 10%;
+      }
+      .result h1{
+        text-align: center;
+      }
+      .result h3{
+        text-align: center;
+      }
+      .button-74 {
+        appearance: none;
+        background-color: #ffffff;
+        border-radius: 40em;
+        border-style: none;
+        box-shadow: #adcfff 0 -12px 6px inset;
+        box-sizing: border-box;
+        color: #000000;
+        cursor: pointer;
+        display: inline-block;
+        font-family: -apple-system, sans-serif;
+        font-size: 1.2rem;
+        font-weight: 700;
+        letter-spacing: -0.24px;
+        margin: 0;
+        outline: none;
+        padding: 1rem 1.3rem;
+        quotes: auto;
+        text-align: center;
+        text-decoration: none;
+        transition: all 0.15s;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+        margin-left: 2px;
+        margin-right: 25px;
+        width:100%;
+      }
+
+      .button-74:hover {
+        background-color: #3cda03;
+        box-shadow: #86ff14 0 -6px 8px inset;
+        transform: scale(1.125);
+      }
+
+      .button-74:active {
+        transform: scale(1.025);
+      }
     </style>
   </head>
 
   <body>
+  <div class="container" id="container">
     <h1 class="test-name" id="test-name">PINK-BLUE TEST</h1>
     <div id="image-container">
       <div class="section" data-section="1">
@@ -173,14 +229,26 @@
         alt="Quiz Image"
       />
     </div>
-
-    <div class="temp-result">
+    <div class="temp-result" id="tempresult">
       <div id="score">Score: 0</div>
       <div id="correct-section">Correct Section: 1</div>
       <div id="wrong-clicks">Wrong Clicks: 0</div>
     </div>
     <div class="button-container">
       <button id="agreeButton" class="button-73" role="button" onclick="not_visible()">NOT VISIBLE</button><button id="agreeButton" class="button-73" role="button" onclick="skip_page()">SKIP TEST</button>
+    </div>
+  </div>
+    <div class="result" id="result">
+      <h1>RESULT</h1>
+      <div class="resultdisplay">
+        <h3 id="correctscore">Correct : </h3>
+        <h3>Total : 24</h3>
+        <h3 id="perscore">Your Score : </h3>
+        <h3 id="pass-fail">PASS - FAIL</h3>
+      </div>
+      <div class="button-container">
+        <button id="agreeButton" class="button-74" role="button" onclick="testhandle()">OKAY</button>
+      </div>
     </div>
 
     <script>
@@ -191,29 +259,29 @@
       let change = 1;
       const quizData = {
         1: { image: "./img/pink-blue/pb-test-1-1.jpg", correctSection: "1" },
-        2: { image: "./img/pink-blue/pb-test-1-2.jpg", correctSection: "2" },
-        3: { image: "./img/pink-blue/pb-test-1-3.jpg", correctSection: "3" },
-        4: { image: "./img/pink-blue/pb-test-1-4.jpg", correctSection: "4" },
-        5: { image: "./img/pink-blue/pb-test-1-5.jpg", correctSection: "5" },
+        2: { image: "./img/pink-blue/pb-test-1-5.jpg", correctSection: "5" },
+        3: { image: "./img/pink-blue/pb-test-1-7.jpg", correctSection: "7" },
+        4: { image: "./img/pink-blue/pb-test-1-2.jpg", correctSection: "2" },
+        5: { image: "./img/pink-blue/pb-test-1-4.jpg", correctSection: "4" },
         6: { image: "./img/pink-blue/pb-test-1-6.jpg", correctSection: "6" },
-        7: { image: "./img/pink-blue/pb-test-1-7.jpg", correctSection: "7" },
-        8: { image: "./img/pink-blue/pb-test-1-8.jpg", correctSection: "8" },
+        7: { image: "./img/pink-blue/pb-test-1-8.jpg", correctSection: "8" },
+        8: { image: "./img/pink-blue/pb-test-1-3.jpg", correctSection: "3" },
         9: { image: "./img/pink-green/pg-test-2-1.jpg", correctSection: "1"},
-        10: { image: "./img/pink-green/pg-test-2-2.jpg", correctSection: "2"},
+        10: { image: "./img/pink-green/pg-test-2-6.jpg", correctSection: "6"},
         11: { image: "./img/pink-green/pg-test-2-3.jpg", correctSection: "3"},
-        12: { image: "./img/pink-green/pg-test-2-4.jpg", correctSection: "4"},
+        12: { image: "./img/pink-green/pg-test-2-8.jpg", correctSection: "8"},
         13: { image: "./img/pink-green/pg-test-2-5.jpg", correctSection: "5"},
-        14: { image: "./img/pink-green/pg-test-2-6.jpg", correctSection: "6"},
+        14: { image: "./img/pink-green/pg-test-2-2.jpg", correctSection: "2"},
         15: { image: "./img/pink-green/pg-test-2-7.jpg", correctSection: "7"},
-        16: { image: "./img/pink-green/pg-test-2-8.jpg", correctSection: "8"},
+        16: { image: "./img/pink-green/pg-test-2-4.jpg", correctSection: "4"},
         17: { image: "./img/green-red/gr-test-3-1.jpg", correctSection: "1"},
-        18: { image: "./img/green-red/gr-test-3-2.jpg", correctSection: "2"},
+        18: { image: "./img/green-red/gr-test-3-7.jpg", correctSection: "7"},
         19: { image: "./img/green-red/gr-test-3-3.jpg", correctSection: "3"},
-        20: { image: "./img/green-red/gr-test-3-4.jpg", correctSection: "4"},
-        21: { image: "./img/green-red/gr-test-3-5.jpg", correctSection: "5"},
+        20: { image: "./img/green-red/gr-test-3-5.jpg", correctSection: "5"},
+        21: { image: "./img/green-red/gr-test-3-8.jpg", correctSection: "8"},
         22: { image: "./img/green-red/gr-test-3-6.jpg", correctSection: "6"},
-        23: { image: "./img/green-red/gr-test-3-7.jpg", correctSection: "7"},
-        24: { image: "./img/green-red/gr-test-3-8.jpg", correctSection: "8"},
+        23: { image: "./img/green-red/gr-test-3-2.jpg", correctSection: "2"},
+        24: { image: "./img/green-red/gr-test-3-4.jpg", correctSection: "4"},
       };
 
       const sections = document.querySelectorAll(".section");
@@ -221,7 +289,7 @@
       const scoreElement = document.getElementById("score");
       const correctSectionElement = document.getElementById("correct-section");
       const wrongClicksElement = document.getElementById("wrong-clicks");
-
+      var count = 0;
       resetQuiz(); // Call the function to set initial values
 
       sections.forEach((section) => {
@@ -256,10 +324,21 @@
           resetSections();
           updateCorrectSection(currentQuizData.correctSection);
         } else {
-          setTimeout(() => {
-            alert("Quiz completed! Your score: " + (score + 3));
-            window.location.href = "number-test.html";
-          }, 500); // Delay the alert to let the user see the last result
+            container.style.display = "none";
+            result.style.display = "block";
+            document.getElementById("correctscore").innerHTML = "Correct : " + (score+3);
+            document.getElementById("perscore").innerHTML = "Your Score : " + ((score+3)*100)/24 + "%";
+            count = ((score+3)*100)/24;
+            if(count >= 70)
+            {
+              document.getElementById("pass-fail").textContent = "PASS";
+            }
+            else
+            {
+              document.getElementById("pass-fail").textContent = "FAIL";
+            }
+            console.log(count);
+            alert("Quiz completed! Your Score : " + (score + 3));
         }
       }
 
@@ -293,6 +372,16 @@
         wrongClicksElement.textContent = "Wrong Clicks: " + wrongClicks;
       }
       
+      function testhandle() {
+        if(count >= 70)
+        {
+          window.location.href = "number-test.html";
+        }
+        else
+        {
+          window.location.href = "colorgap-test.html";
+        }
+      }
       function not_visible() {
         showNextImage();
       }
