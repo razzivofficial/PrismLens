@@ -145,7 +145,8 @@
     <img src="{{ url_for('video_feed') }}" alt="PrismLens Glass Overlays">
     <div class="button-container">
         <button class="control-btn camera-btn" onclick="toggleCamera()">Toggle Camera</button>
-        <button class="control-btn frame-btn" onclick="selectFrame()">Select Frame</button>
+        <!-- <button class="control-btn frame-btn" onclick="selectFrame()">Select Frame</button> -->
+        <a href="http://localhost:8081/Primlens/Buypage.jsp"><button class="control-btn frame-btn">Select Frame</button></a>
     </div>
     <button class="control-btn bttn-1" onclick="changeGlasses()">Change Glasses</button>
 
@@ -160,13 +161,13 @@
             //     .catch(error => console.error('Error:', error));
         }
 
-        function selectFrame() {
-            // Send a request to the server to select a different frame
-            fetch('/select_frame')
-                .then(response => response.text())
-                .then(message => console.log(message))
-                .catch(error => console.error('Error:', error));
-        }
+        // function selectFrame() {
+        //     // Send a request to the server to select a different frame
+        //     fetch('/select_frame')
+        //         .then(response => response.text())
+        //         .then(message => console.log(message))
+        //         .catch(error => console.error('Error:', error));
+        // }
 
         function changeGlasses() {
             // Send a request to the server to change the glasses
