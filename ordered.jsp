@@ -258,70 +258,76 @@
 <div class='order-container-top-top-top'>
 
 <%
-// Database connection parameters for orders
-String ordersJdbcUrl = "jdbc:oracle:thin:@localhost:1521:xe";
-String ordersUsername = "system";
-String ordersPassword = "admin";
+// Retrieve user email from session
+String userEmail = (String) session.getAttribute("email");
 
-// JDBC connections for orders
-Connection ordersConnection = null;
-PreparedStatement ordersPreparedStatement = null;
-ResultSet ordersResultSet = null;
+// Check if the user is logged in
+if (userEmail != null && !userEmail.isEmpty()) {
+    // Database connection parameters for orders
+    String ordersJdbcUrl = "jdbc:oracle:thin:@localhost:1521:xe";
+    String ordersUsername = "system";
+    String ordersPassword = "admin";
 
-try {
-    // Load the JDBC driver for orders
-    Class.forName("oracle.jdbc.driver.OracleDriver");
+    // JDBC connections for orders
+    Connection ordersConnection = null;
+    PreparedStatement ordersPreparedStatement = null;
+    ResultSet ordersResultSet = null;
 
-    // Establish the connection for orders
-    ordersConnection = DriverManager.getConnection(ordersJdbcUrl, ordersUsername, ordersPassword);
-
-    // Fetch all orders from the orders table
-    String selectOrdersQuery = "SELECT * FROM orders";
-    ordersPreparedStatement = ordersConnection.prepareStatement(selectOrdersQuery);
-    ordersResultSet = ordersPreparedStatement.executeQuery();
-
-    // Display orders
-
-    while (ordersResultSet.next()) {
-        String userEmail = ordersResultSet.getString("user_email");
-        String orderDescription = ordersResultSet.getString("product_description");
-        double orderPrice = ordersResultSet.getDouble("product_price");
-        String orderImageLink = ordersResultSet.getString("product_image_link");
-        Timestamp orderTimestamp = ordersResultSet.getTimestamp("order_timestamp");
-	
-        
-        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-        SimpleDateFormat timeFormat = new SimpleDateFormat("hh:mm a");
-        
-        String formattedDate = dateFormat.format(orderTimestamp);
-        String formattedTime = timeFormat.format(orderTimestamp);
-        // Display order details in a container with image
-        out.println("<div class='order-container-top-top'>");
-        out.println("<div class='order-container-top'>");
-        out.println("<img src='" + orderImageLink + "' alt='Product Image' class='order-image'>");
-        out.println("<p>Product: " + orderDescription + "</p>");
-        out.println("<p id='order-price-xx-eef'>Price: " + orderPrice + "</p>");
-        out.println("<p id='order-price-xx-eeff'>Date: " + formattedDate + "</p>");
-        out.println("<p id='order-price-xx-eefff'>Time: " + formattedTime + "</p>");
-        out.println("</div>");
-        out.println("</div>");
-    }
-
-
-} catch (Exception e) {
-    e.printStackTrace();
-} finally {
-    // Close the resources for orders
     try {
-        if (ordersResultSet != null) ordersResultSet.close();
-        if (ordersPreparedStatement != null) ordersPreparedStatement.close();
-        if (ordersConnection != null) ordersConnection.close();
-    } catch (SQLException e) {
+        // Load the JDBC driver for orders
+        Class.forName("oracle.jdbc.driver.OracleDriver");
+
+        // Establish the connection for orders
+        ordersConnection = DriverManager.getConnection(ordersJdbcUrl, ordersUsername, ordersPassword);
+
+        // Fetch orders for the specific user from the orders table
+        String selectOrdersQuery = "SELECT * FROM orders WHERE user_email = ?";
+        ordersPreparedStatement = ordersConnection.prepareStatement(selectOrdersQuery);
+        ordersPreparedStatement.setString(1, userEmail);
+        ordersResultSet = ordersPreparedStatement.executeQuery();
+
+        // Display orders
+        while (ordersResultSet.next()) {
+            String orderDescription = ordersResultSet.getString("product_description");
+            double orderPrice = ordersResultSet.getDouble("product_price");
+            String orderImageLink = ordersResultSet.getString("product_image_link");
+            Timestamp orderTimestamp = ordersResultSet.getTimestamp("order_timestamp");
+
+            // Format timestamp to display date and time without seconds
+            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+            SimpleDateFormat timeFormat = new SimpleDateFormat("hh:mm a");
+
+            String formattedDate = dateFormat.format(orderTimestamp);
+            String formattedTime = timeFormat.format(orderTimestamp);
+
+            // Display order details in a container with image
+            out.println("<div class='order-container-top-top'>");
+            out.println("<div class='order-container-top'>");
+            out.println("<img src='" + orderImageLink + "' alt='Product Image' class='order-image'>");
+            out.println("<p>Product: " + orderDescription + "</p>");
+            out.println("<p id='order-price-xx-eef'>Price: " + orderPrice + "</p>");
+            out.println("<p id='order-price-xx-eeff'>Date: " + formattedDate + "</p>");
+            out.println("<p id='order-price-xx-eefff'>Time: " + formattedTime + "</p>");
+            out.println("</div>");
+            out.println("</div>");
+        }
+    } catch (Exception e) {
         e.printStackTrace();
+    } finally {
+        // Close the resources for orders
+        try {
+            if (ordersResultSet != null) ordersResultSet.close();
+            if (ordersPreparedStatement != null) ordersPreparedStatement.close();
+            if (ordersConnection != null) ordersConnection.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
+} else {
+    // User is not logged in
+    out.println("<p>User not logged in. Please log in to view the orders.</p>");
 }
 %>
-
 </div>
 </body>
 
