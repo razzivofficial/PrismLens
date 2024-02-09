@@ -95,7 +95,7 @@ $k("#show").on(
       setTimeout(() => {
         alert("Number test completed! Your score : " + good);
         //window.location.reload();
-        window.location.href = "../../index.html";
+        window.location.href = "../../Buypage.jsp";
       }, 300);
     }
     showPlate();
@@ -123,7 +123,7 @@ $k(window).on(
         setTimeout(() => {
           alert("Number test completed! Your score : " + good);
           //window.location.reload();
-          window.location.href = "../../index.html";
+          window.location.href = "../../Buypage.jsp";
         }, 1000);
       }
 
@@ -144,5 +144,5 @@ showPlate();
 
 function skip_page() {
 	alert("Number test completed! Your score : " + good);
-  	window.location.href = "../../index.html";
+  	window.location.href = "../../Buypage.jsp";
 }
