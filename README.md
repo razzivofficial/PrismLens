@@ -37,12 +37,21 @@ Our siite offers a range of features:
 
 ## Screenshots
 
-Homepage
-![Homepage](https://github.com/razzivofficial/PrismLens/assets/91611270/19b04ef6-7b4f-489e-a606-140d19a5d7d7)
-
-3D Trial
-![3D-Trial](https://github.com/razzivofficial/PrismLens/assets/91611270/0c517207-dc70-4ca0-927e-559dbb4946c1)
-
+![Homepage](https://github.com/razzivofficial/PrismLens/assets/91611270/984c08d6-9855-453c-bedd-9470edd7129f)
+![3D-Trial](https://github.com/razzivofficial/PrismLens/assets/91611270/17cf2e6f-e6c8-44a8-bbb5-4ad5f755e1f3)
+![Add-to-cart](https://github.com/razzivofficial/PrismLens/assets/91611270/fe773d5a-6849-4f0c-8081-5ed62e2d189b)
+![cart-page](https://github.com/razzivofficial/PrismLens/assets/91611270/c188fa4f-f4a6-47ff-8199-b9701b6504d8)
+![order-placed](https://github.com/razzivofficial/PrismLens/assets/91611270/ac462363-8490-4568-bcfc-beed5c76695f)
+![orders](https://github.com/razzivofficial/PrismLens/assets/91611270/afcdf205-33b5-4529-af2b-d7518948f26a)
+![eye-tests](https://github.com/razzivofficial/PrismLens/assets/91611270/a3c65822-8380-4715-8dce-0f24807ed929)
+![eye-test-2](https://github.com/razzivofficial/PrismLens/assets/91611270/7e0b4ee0-8c02-488a-ba2e-5215a45d8b48)
+![color-blindness-test](https://github.com/razzivofficial/PrismLens/assets/91611270/79910f55-5ef6-45e5-afef-ea8be524e545)
+![color-blindness-test1](https://github.com/razzivofficial/PrismLens/assets/91611270/127f574e-549e-447b-b11b-729179f04add)
+![color-blindness-test2](https://github.com/razzivofficial/PrismLens/assets/91611270/a5a0a2fc-189e-49c4-b9d2-f697d3b34824)
+![color-blindness-test3](https://github.com/razzivofficial/PrismLens/assets/91611270/f9961eff-7cdd-4fbc-bb7e-cc28b0013782)
+![power-test1](https://github.com/razzivofficial/PrismLens/assets/91611270/71fafc35-2ef8-424a-bf60-c2128c6a4d7d)
+![power-test2](https://github.com/razzivofficial/PrismLens/assets/91611270/a9617b72-aecc-4740-b675-2dc241f0f5bb)
+![power-test3](https://github.com/razzivofficial/PrismLens/assets/91611270/5570d1f1-bd73-462b-be50-c21c6e2710c2)
 
 ## Installation
 
